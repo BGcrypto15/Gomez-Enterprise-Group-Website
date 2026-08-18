@@ -1,0 +1,41 @@
+.about {
+  padding: var(--section-pad) 0;
+  background: var(--charcoal-deep);
+}
+
+.about__grid {
+  display: grid;
+  gap: 48px;
+  align-items: start;
+}
+
+.about__mark {
+  width: 96px;
+  justify-self: start;
+}
+
+.about__mark img {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+.about__copy p {
+  color: var(--gray);
+  font-size: 17px;
+  max-width: 640px;
+  margin-top: 20px;
+}
+
+.about__sign {
+  color: var(--gold-light) !important;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px !important;
+  margin-top: 32px !important;
+}
+
+@media (min-width: 860px) {
+  .about__grid {
+    grid-template-columns: 140px 1fr;
+  }
+}

@@ -1,0 +1,168 @@
+:root {
+  /* ---- Brand colors, sampled directly from the GEG logo ---- */
+  --charcoal: #292A2E;
+  --charcoal-deep: #1C1D20;
+  --charcoal-soft: #35363B;
+  --gold: #896D3D;
+  --gold-light: #F2D884;
+  --green: #18442D;
+  --green-sage: #396A4D;
+  --cream: #F7F4EE;
+  --gray: #A7A297;
+  --line: rgba(242, 216, 132, 0.14);
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ---- Layout ---- */
+  --max-width: 1180px;
+  --section-pad: clamp(64px, 10vw, 128px);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-top: 12px;
+  max-width: 720px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-primary {
+  background: var(--gold-light);
+  color: var(--charcoal-deep);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #ffe9a8;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(247, 244, 238, 0.25);
+  color: var(--cream);
+}
+.btn-ghost:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Fallback-safe gradient text: solid color first, gradient only where supported */
+.text-gradient {
+  color: var(--gold-light);
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .text-gradient {
+    background: linear-gradient(100deg, var(--gold-light) 10%, var(--gold) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--gold-light);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
