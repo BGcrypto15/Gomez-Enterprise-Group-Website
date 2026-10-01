@@ -13,7 +13,7 @@ export default function Hero() {
         <p className="lede">
           Four ways to work with us: hands-on business consulting, full brand and website
           launches, custom-built systems for markets bigger companies overlook, and fractional
-          executive support for growing companies. However involved you want us, that's how we
+          executive support for businesses of any size. However involved you want us, that's how we
           build it.
         </p>
         <div className="hero-ctas">

@@ -1,9 +1,8 @@
 const STATS = ['15+ Years Experience', '1,000+ Stores Supported', '7 States', '#1 Nationally Ranked']
 
 const COMPANIES = [
-  { name: 'T-Mobile', note: 'Fortune 100' },
-  { name: 'Verizon', note: 'Fortune 100' },
-  { name: 'Assurant', note: 'Fortune 500' },
+  { name: 'Fortune 100', note: 'Wireless & Telecom' },
+  { name: 'Fortune 500', note: 'Device Protection & Services' },
   { name: 'Architectural Aluminum & Glass', note: 'Draftsman & Jr. Project Manager' },
 ]
 
@@ -20,7 +19,7 @@ export default function Story() {
             <span className="stat-pill" key={s}>{s}</span>
           ))}
         </div>
-        <p className="worked-label">Where I've Worked</p>
+        <p className="worked-label">Experience Across</p>
         <div className="company-row">
           {COMPANIES.map((c) => (
             <div className="company-chip" key={c.name}>

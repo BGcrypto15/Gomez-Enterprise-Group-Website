@@ -178,7 +178,10 @@ section h2 { color: var(--white); }
 }
 .company-name { color: var(--white); font-weight: 600; font-size: 14.5px; text-align: center; }
 .company-note { color: rgba(242,216,132,0.85); font-size: 12px; letter-spacing: 0.03em; text-align: center; }
-@media (max-width: 560px) { .company-chip { flex: 1 1 calc(50% - 12px); min-width: 0; } }
+@media (max-width: 560px) {
+  .company-chip { flex: 1 1 calc(50% - 12px); min-width: 0; }
+  .company-chip:last-child { flex-basis: 100%; }
+}
 .story-copy { max-width: 700px; margin: 0 auto; font-size: 16.5px; text-align: center; }
 .story-copy p { color: rgba(251,246,233,0.88); }
 
