@@ -41,7 +41,13 @@ const SERVICES = [
       'WiFi, network, and camera system setup',
       'Delivered Built For You, Built With You, or Built By You',
     ],
-    example: 'a custom system to track trading cards, collectibles, or niche inventory, built to your spec and yours to keep.',
+    example: [
+      'Inventory trackers and restock alerts sent to your phone',
+      'Digital signage software that rotates your ads and promos',
+      'Giveaway and sweepstakes platforms',
+      'Tech setup and support for WiFi, cameras, and devices',
+    ],
+    exampleClose: 'Built to your spec and yours to keep.',
   },
   {
     id: 'fractional',
@@ -92,9 +98,21 @@ export default function Services() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <p className="example">
-              <strong>The type of work:</strong> {current.example}
-            </p>
+            {Array.isArray(current.example) ? (
+              <div className="example">
+                <strong>The type of work:</strong>
+                <ul className="example-list">
+                  {current.example.map((ex) => (
+                    <li key={ex}>{ex}</li>
+                  ))}
+                </ul>
+                {current.exampleClose && <p className="example-close">{current.exampleClose}</p>}
+              </div>
+            ) : (
+              <p className="example">
+                <strong>The type of work:</strong> {current.example}
+              </p>
+            )}
           </div>
         </div>
       </div>

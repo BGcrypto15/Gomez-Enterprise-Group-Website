@@ -222,6 +222,9 @@ section h2 { color: var(--white); }
   padding-top: 18px; margin: 0;
 }
 .tab-card .example strong { color: var(--gold-light); font-style: normal; }
+.tab-card .example-list { margin: 10px 0 12px; padding-left: 20px; }
+.tab-card .example-list li { font-size: 13.5px; color: #FFFFFF; margin-bottom: 6px; }
+.tab-card .example-close { margin: 0; color: #FFFFFF; }
 
 /* ---------- CONTACT ---------- */
 .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
