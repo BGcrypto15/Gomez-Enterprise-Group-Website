@@ -48,14 +48,14 @@ const SERVICES = [
     label: 'Fractional Executive Partner',
     hook: 'Senior operational leadership, without the executive salary.',
     impact:
-      "Embedded performance and operations support for growing companies that need more structure than a consultant, but aren't ready for a full-time hire.",
+      "Embedded performance and operations support for businesses of any size that need more structure than a consultant, but aren't ready for a full-time hire.",
     items: [
       'Weekly leadership syncs',
       'KPI dashboard build and maintenance',
       'Monthly automation sprints',
       'Quarterly partner and performance reviews',
     ],
-    example: 'a $2 to $10 million business that needs someone owning performance and operations, on a fractional basis.',
+    example: 'a business of any size, from a solo operator to an established company, that needs someone owning performance and operations, on a fractional basis.',
   },
 ]
 
