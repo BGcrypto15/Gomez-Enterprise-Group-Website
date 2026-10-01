@@ -320,3 +320,11 @@ footer { background: var(--charcoal-deep); border-top: 1px solid rgba(242,216,13
 .faq-item summary::after { content: '+'; position: absolute; right: 0; top: 14px; font-size: 24px; color: var(--gold-light); }
 .faq-item[open] summary::after { content: '\2212'; }
 .faq-item p { font-size: 15px; color: rgba(251,246,233,0.85); padding-bottom: 18px; margin: 0; }
+
+/* ---------- SERVICE PRICES ---------- */
+.price-tag {
+  display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 20px;
+  font-size: 13.5px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--charcoal-deep); background: var(--gold-light);
+}
+.price-note { text-align: center; font-size: 13.5px; color: rgba(251,246,233,0.7); margin: 18px auto 0; max-width: 600px; }

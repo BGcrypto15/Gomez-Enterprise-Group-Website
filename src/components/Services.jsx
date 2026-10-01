@@ -3,6 +3,7 @@ import { useState } from 'react'
 const SERVICES = [
   {
     id: 'launch',
+    price: 'Starting at $1,500',
     label: 'Launch Package',
     hook: "For the idea that's been sitting in your notes app too long.",
     impact: 'The full build-out: turns a passion or an idea into a fully branded, live business, fast. Just need the essentials? Start with the $500 Starter Bundle.',
@@ -18,6 +19,7 @@ const SERVICES = [
   },
   {
     id: 'growth',
+    price: 'Starting at $500',
     label: 'Growth Advisory',
     hook: "For businesses that are running, but not running efficiently.",
     impact: 'Brings structure, accountability, and a clear plan to businesses that have outgrown guesswork.',
@@ -31,6 +33,7 @@ const SERVICES = [
   },
   {
     id: 'systems',
+    price: 'Starting at $500',
     label: 'Build-to-Own Systems',
     hook: 'Why rent software when you can own it outright.',
     impact:
@@ -51,6 +54,7 @@ const SERVICES = [
   },
   {
     id: 'fractional',
+    price: 'Starting at $1,500/month',
     label: 'Fractional Executive Partner',
     hook: 'Senior operational leadership, without the executive salary.',
     impact:
@@ -91,6 +95,7 @@ export default function Services() {
 
         <div className="tab-panel active">
           <div className="tab-card">
+            <span className="price-tag">{current.price}</span>
             <p className="hook">{current.hook}</p>
             <p className="impact">{current.impact}</p>
             <ul>
@@ -114,6 +119,9 @@ export default function Services() {
               </p>
             )}
           </div>
+          <p className="price-note">
+            Starting prices cover smaller projects. Bigger builds get a custom quote after your free consultation.
+          </p>
         </div>
       </div>
     </section>
