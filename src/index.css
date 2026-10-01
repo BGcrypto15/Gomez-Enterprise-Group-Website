@@ -296,3 +296,9 @@ footer { background: var(--charcoal-deep); border-top: 1px solid rgba(242,216,13
 .work-link { color: var(--gold-light); font-size: 14px; font-weight: 600; text-decoration: none; }
 .work-link:hover { text-decoration: underline; }
 .work-status { font-size: 13px; font-style: italic; color: rgba(251,246,233,0.65); }
+
+.work-custom { grid-column: 1 / -1; border-color: rgba(242,216,132,0.45); }
+.custom-list { list-style: none; padding: 0; margin: 4px 0 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; }
+@media (max-width: 600px) { .custom-list { grid-template-columns: 1fr; } }
+.custom-list li { font-size: 14.5px; color: rgba(251,246,233,0.9); padding-left: 24px; position: relative; }
+.custom-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }

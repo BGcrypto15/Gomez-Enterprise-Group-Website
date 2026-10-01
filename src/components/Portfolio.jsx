@@ -39,6 +39,15 @@ const PROJECTS = [
   },
 ]
 
+const CUSTOM = [
+  'Online booking with automatic text reminders',
+  'Customer loyalty and rewards programs',
+  'Client portals and simple CRMs to track customers and jobs',
+  'Quote, estimate, and invoice builders',
+  'Online ordering and payment pages',
+  'KPI and sales dashboards',
+]
+
 export default function Portfolio() {
   return (
     <section className="theme-green-wash" id="work">
@@ -63,6 +72,17 @@ export default function Portfolio() {
               )}
             </div>
           ))}
+          <div className="work-card work-custom">
+            <span className="work-tag">Build-to-Own Systems</span>
+            <h3>Need Something Custom?</h3>
+            <span className="work-type">Other systems we build</span>
+            <ul className="custom-list">
+              {CUSTOM.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+            <a href="#contact" className="work-link">Tell us what you need &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
