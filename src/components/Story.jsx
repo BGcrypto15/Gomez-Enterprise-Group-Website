@@ -46,7 +46,7 @@ export default function Story() {
         </div>
         <div className="story-ctas">
           {BOOKING_ENABLED && (
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
               Book a Free Call
             </a>
           )}

@@ -67,7 +67,7 @@ export default function Contact() {
         </p>
         {BOOKING_ENABLED ? (
           <div className="contact-options">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
               Book a Call
             </a>
             <span className="contact-or">or send us a message below. We reply within 24 hours.</span>

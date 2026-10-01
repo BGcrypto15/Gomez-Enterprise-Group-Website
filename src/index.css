@@ -330,3 +330,19 @@ footer { background: var(--charcoal-deep); border-top: 1px solid rgba(242,216,13
 .price-note { text-align: center; font-size: 13.5px; color: rgba(251,246,233,0.7); margin: 18px auto 0; max-width: 600px; }
 
 .offer-fast { font-size: 14.5px; font-weight: 600; color: var(--gold-light); margin-top: 2px; }
+
+/* ---------- GLOWING BOOKING BUTTON ---------- */
+.btn-glow {
+  background: linear-gradient(180deg, #FFF1BF 0%, #F2D884 45%, #E2C06A 100%);
+  color: #1B1C1F; font-size: 16px; padding: 15px 34px; border-radius: 6px;
+  border: 1px solid rgba(255,241,191,0.9);
+  animation: btn-glow-pulse 3.2s ease-in-out infinite;
+}
+.btn-glow:hover { transform: translateY(-2px); }
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(242,216,132,0.55), 0 0 28px rgba(242,216,132,0.3), 0 0 48px rgba(137,109,61,0.25); }
+  50% { box-shadow: 0 0 20px rgba(242,216,132,0.95), 0 0 46px rgba(242,216,132,0.55), 0 0 80px rgba(137,109,61,0.45); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow { animation: none; box-shadow: 0 0 18px rgba(242,216,132,0.8), 0 0 40px rgba(242,216,132,0.4); }
+}
