@@ -18,7 +18,7 @@ export default function Hero() {
           one roof. However involved you want us, that's how we build it.
         </p>
         <div className="hero-ctas">
-          <a href="#contact" className="btn btn-gold">Start With a Free Consultation</a>
+          <a href="#contact" className="btn btn-glow">Start With a Free Consultation</a>
           <a href="#services" className="btn btn-outline">Explore Services</a>
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function Offer() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <a href="#contact" className="btn btn-gold">Claim the $500 Bundle</a>
+          <a href="#contact" className="btn btn-glow">Claim the $500 Bundle</a>
         </div>
         <p className="offer-referral">
           Know someone who needs this? Earn <strong>$100 cash</strong> for every client you refer,
