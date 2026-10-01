@@ -1,3 +1,5 @@
+import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
+
 const STATS = ['15+ Years Experience', '1,000+ Dealers Across Multiple States', 'Award-Winning Track Record', 'You Own What We Build', 'We Teach You to Run It']
 
 const COMPANIES = [
@@ -43,10 +45,14 @@ export default function Story() {
           </p>
         </div>
         <div className="story-ctas">
-          <a href="https://calendly.com/bgomezjeb/30min" target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-            Book a Free Call
+          {BOOKING_ENABLED && (
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+              Book a Free Call
+            </a>
+          )}
+          <a href="#contact" className={BOOKING_ENABLED ? 'btn btn-outline' : 'btn btn-gold'}>
+            {BOOKING_ENABLED ? 'Send a Message' : 'Get Your Free Consultation'}
           </a>
-          <a href="#contact" className="btn btn-outline">Send a Message</a>
         </div>
       </div>
     </section>
