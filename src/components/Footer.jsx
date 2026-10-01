@@ -18,8 +18,6 @@ export default function Footer() {
           </svg>
           Gomez Enterprise Group (LinkedIn coming soon)
         </span>
-        <span>&middot;</span>
-        <span>Bgomezjeb@gmail.com</span>
       </div>
     </footer>
   )
