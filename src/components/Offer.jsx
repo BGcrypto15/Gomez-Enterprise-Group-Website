@@ -18,6 +18,7 @@ export default function Offer() {
             <span className="offer-tag">Limited-Time Price</span>
             <span className="offer-amount">$500</span>
             <span className="offer-sub">One price for everything below</span>
+            <span className="offer-fast">Website live in as little as 48 hours</span>
             <span className="offer-sub">Need the full build-out? See the Launch Package.</span>
           </div>
           <ul className="offer-list">

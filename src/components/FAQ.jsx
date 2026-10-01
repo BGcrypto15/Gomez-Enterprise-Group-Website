@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: 'How long does a website take?',
-    a: 'Most starter sites go live within a couple of weeks once we have your content and photos. Bigger builds get their own timeline in your quote.',
+    a: 'Most websites can go live in as little as 48 hours once we have your content and photos. More complex builds get their own timeline in your quote.',
   },
   {
     q: 'Can you fix or upgrade the website I already have?',

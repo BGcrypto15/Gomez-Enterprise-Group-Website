@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const CALENDLY_URL = 'https://calendly.com/bgomezjeb'
+const CALENDLY_URL = 'https://calendly.com/bgomezjeb/30min'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdenpyrv'
 
 const INITIAL_FORM = {
