@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+const CALENDLY_URL = 'https://calendly.com/bgomezjeb'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdenpyrv'
 
 const INITIAL_FORM = {
@@ -43,7 +44,14 @@ export default function Contact() {
         <div className="wrap contact-inner">
           <span className="eyebrow">Let's Talk</span>
           <h2>Got It.</h2>
-          <p className="sub">Thanks for reaching out. We'll get back to you shortly.</p>
+          <p className="sub">Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          <p className="sub">
+            Want to lock in a time now?{' '}
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-link">
+              Book a call on our calendar
+            </a>
+            .
+          </p>
         </div>
       </section>
     )
@@ -57,6 +65,12 @@ export default function Contact() {
         <p className="sub">
           Start with a free consultation. No obligation, just a real conversation about what's next.
         </p>
+        <div className="contact-options">
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+            Book a Call
+          </a>
+          <span className="contact-or">or send us a message below. We reply within 24 hours.</span>
+        </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div>

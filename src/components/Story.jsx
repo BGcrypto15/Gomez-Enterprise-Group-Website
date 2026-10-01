@@ -42,6 +42,12 @@ export default function Story() {
             under the family name because it's meant to last for generations.
           </p>
         </div>
+        <div className="story-ctas">
+          <a href="https://calendly.com/bgomezjeb" target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+            Book a Free Call
+          </a>
+          <a href="#contact" className="btn btn-outline">Send a Message</a>
+        </div>
       </div>
     </section>
   )

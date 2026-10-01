@@ -5,7 +5,7 @@ const SERVICES = [
     id: 'launch',
     label: 'Launch Package',
     hook: "For the idea that's been sitting in your notes app too long.",
-    impact: 'Turns a passion or an idea into a fully branded, live business, fast.',
+    impact: 'The full build-out: turns a passion or an idea into a fully branded, live business, fast. Just need the essentials? Start with the $500 Starter Bundle.',
     items: [
       'Brand identity: logo, colors, voice',
       'Website build, live and mobile-ready',

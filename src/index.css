@@ -302,3 +302,21 @@ footer { background: var(--charcoal-deep); border-top: 1px solid rgba(242,216,13
 @media (max-width: 600px) { .custom-list { grid-template-columns: 1fr; } }
 .custom-list li { font-size: 14.5px; color: rgba(251,246,233,0.9); padding-left: 24px; position: relative; }
 .custom-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }
+
+/* ---------- CONTACT OPTIONS / CTAs ---------- */
+.contact-options { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: -12px 0 36px; }
+.contact-or { font-size: 14.5px; color: rgba(251,246,233,0.75); }
+.inline-link { color: var(--gold-light); font-weight: 600; }
+.story-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+.faq-item { background: rgba(251,246,233,0.04); border: 1px solid rgba(242,216,132,0.22); border-radius: 8px; padding: 0 22px; }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 18px 28px 18px 0; position: relative;
+  font-size: 16px; font-weight: 600; color: var(--white);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; position: absolute; right: 0; top: 14px; font-size: 24px; color: var(--gold-light); }
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p { font-size: 15px; color: rgba(251,246,233,0.85); padding-bottom: 18px; margin: 0; }

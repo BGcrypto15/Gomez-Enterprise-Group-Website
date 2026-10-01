@@ -18,6 +18,7 @@ export default function Offer() {
             <span className="offer-tag">Limited-Time Price</span>
             <span className="offer-amount">$500</span>
             <span className="offer-sub">One price for everything below</span>
+            <span className="offer-sub">Need the full build-out? See the Launch Package.</span>
           </div>
           <ul className="offer-list">
             {INCLUDES.map((item) => (
@@ -27,7 +28,8 @@ export default function Offer() {
           <a href="#contact" className="btn btn-gold">Claim the $500 Bundle</a>
         </div>
         <p className="offer-referral">
-          Know someone who needs this? Earn <strong>$100 cash</strong> for every paying client you refer.
+          Know someone who needs this? Earn <strong>$100 cash</strong> for every client you refer,
+          paid once their project is paid in full.
         </p>
       </div>
     </section>
