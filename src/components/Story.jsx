@@ -1,4 +1,4 @@
-const STATS = ['15+ Years Experience', '1,000+ Stores Across Multiple States', 'Award-Winning Track Record']
+const STATS = ['15+ Years Experience', '1,000+ Stores Across Multiple States', 'Award-Winning Track Record', 'You Own What We Build', 'We Teach You to Run It']
 
 const COMPANIES = [
   { name: 'Fortune 100', note: 'Wireless & Telecom' },
@@ -30,8 +30,9 @@ export default function Story() {
         </div>
         <div className="story-copy">
           <p>
-            I've spent 15+ years inside Fortune 100 and Fortune 500 companies, been ranked #1
-            nationally more than once, and supported over 1,000 stores across multiple states.
+            I've spent 15+ years inside Fortune 100 and Fortune 500 companies, supporting over
+            1,000 stores across multiple states and delivering results that held up against the
+            best in the country.
             Before wireless, I worked as a draftsman and junior project manager for architectural
             aluminum and glass companies.
           </p>
