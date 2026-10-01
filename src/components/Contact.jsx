@@ -5,7 +5,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdenpyrv'
 const INITIAL_FORM = {
   name: '',
   email: '',
-  interest: 'Launch Package',
+  interest: 'Starter Bundle ($500)',
   message: '',
 }
 
@@ -87,10 +87,15 @@ export default function Contact() {
           <div>
             <label htmlFor="interest">What are you interested in?</label>
             <select id="interest" name="interest" value={form.interest} onChange={handleChange}>
+              <option>Starter Bundle ($500)</option>
               <option>Launch Package</option>
               <option>Growth Advisory</option>
               <option>Build-to-Own Systems</option>
               <option>Fractional Executive Partner</option>
+              <option>AI Coaching</option>
+              <option>Tech Setup &amp; Support</option>
+              <option>Social Media Content</option>
+              <option>Branded Apparel or QR Codes</option>
               <option>Not sure yet</option>
             </select>
           </div>
@@ -108,7 +113,7 @@ export default function Contact() {
             {status === 'sending' ? 'Sending...' : 'Send It'}
           </button>
           {status === 'error' && (
-            <p className="form-error">Something went wrong. Try again, or email us directly.</p>
+            <p className="form-error">Something went wrong. Please try sending it again in a minute.</p>
           )}
         </form>
       </div>

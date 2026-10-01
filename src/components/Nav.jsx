@@ -20,8 +20,9 @@ export default function Nav() {
           &#9776;
         </button>
         <div className={`nav-links ${open ? 'open' : ''}`}>
-          <a href="#what-we-do" onClick={closeMenu}>About</a>
           <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#work" onClick={closeMenu}>Our Work</a>
+          <a href="#about" onClick={closeMenu}>About</a>
           <a href="#contact" onClick={closeMenu}>Contact</a>
           <a href="#contact" className="btn btn-gold" onClick={closeMenu}>
             Free Consultation

@@ -7,14 +7,15 @@ export default function Hero() {
         <div className="hero-icon">
           <img src={gegLogo} alt="Gomez Enterprise Group logo" />
         </div>
+        <p className="hero-descriptor">
+          Business Strategy, Branding &amp; Growth for Small Businesses and First-Time Founders
+        </p>
         <h1>
           Built <em>For You</em>. Built <em>With You</em>. Built <em>By You</em>.
         </h1>
         <p className="lede">
-          Four ways to work with us: hands-on business consulting, full brand and website
-          launches, custom-built systems for markets bigger companies overlook, and fractional
-          executive support for businesses of any size. However involved you want us, that's how we
-          build it.
+          Websites, logos, custom software, tech support, and real business strategy, all under
+          one roof. However involved you want us, that's how we build it.
         </p>
         <div className="hero-ctas">
           <a href="#contact" className="btn btn-gold">Start With a Free Consultation</a>

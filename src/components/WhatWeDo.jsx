@@ -1,33 +1,33 @@
 const CARDS = [
   {
     num: '01',
-    title: 'Launch Package',
-    copy: 'Turn your idea into a real business. Brand, website, socials, and a growth roadmap, built and ready to launch.',
+    title: 'AI Coaching',
+    copy: 'Learn how to use AI for your job, your business, or everyday life. Plain-English training, no tech background needed.',
   },
   {
     num: '02',
-    title: 'Growth Advisory',
-    copy: 'Strategy and accountability for businesses ready to grow. Audits, roadmaps, and ongoing advisory built around your numbers.',
+    title: 'Tech Setup & Support',
+    copy: 'WiFi, extenders, security cameras, and devices installed and set up right, plus help when something stops working.',
   },
   {
     num: '03',
-    title: 'Build-to-Own Systems',
-    copy: 'Custom tools and systems you actually own. One-time cost, no subscriptions, no dependence on someone else\u2019s platform.',
+    title: 'Social Media Content',
+    copy: 'Posts created and scheduled for you, so your page stays active and consistent while you run the business.',
   },
   {
     num: '04',
-    title: 'Fractional Executive Partner',
-    copy: 'Embedded, senior-level operations support for growing companies. Performance systems and automation, without a full-time executive salary.',
+    title: 'Branded Apparel & QR Codes',
+    copy: 'Shirts with your logo for your team or customers, and QR codes that send people straight to your site, menu, or reviews.',
   },
 ]
 
 export default function WhatWeDo() {
   return (
-    <section className="theme-gold-wash" id="what-we-do">
+    <section className="theme-charcoal" id="more">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow">What We Do</span>
-          <h2>Four Ways We Help You Grow</h2>
+          <span className="eyebrow">More Ways We Help</span>
+          <h2>Tech, AI, and Everyday Business Support</h2>
         </div>
         <div className="card-grid">
           {CARDS.map((c) => (
@@ -38,6 +38,9 @@ export default function WhatWeDo() {
             </div>
           ))}
         </div>
+        <p className="more-note">
+          Want to learn to do it yourself? Anything we build, we can also teach you to run.
+        </p>
       </div>
     </section>
   )
