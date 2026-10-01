@@ -12,7 +12,7 @@ export default function Hero() {
         </h1>
         <p className="lede">
           Strategy, branding, websites, and custom software for small businesses and first-time
-          founders, built however involved you want us to be.
+          founders. We build it for you, build it with you, or teach you to run it yourself.
         </p>
         <div className="hero-ctas">
           <a href="#contact" className="btn btn-glow">Start With a Free Consultation</a>
