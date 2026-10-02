@@ -121,16 +121,53 @@ a.btn.btn-gold, button.btn.btn-gold {
 }
 .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-/* ---------- RIBBON DIVIDER (plain, no glow, no lines) ---------- */
-.divider-ribbon {
-  height: 38px;
-  background-image: url('./assets/geg-icon.png');
-  background-repeat: repeat-x;
-  background-position: center center;
-  background-size: 22px auto;
+/* ---------- STREAK DIVIDER (two logos slide from center to the edges) ---------- */
+.divider-streak {
+  --logo: 28px;
+  --edge: 14px;
+  --dur: 1.5s;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  height: 46px;
+  overflow: hidden;
 }
+.streak {
+  position: absolute;
+  top: 50%;
+  height: 9px;
+  margin-top: -4.5px;
+  background: linear-gradient(to bottom,
+    var(--gold-light) 0, var(--gold-light) 3px,
+    #0B0C0E 3px, #0B0C0E 6px,
+    var(--sage) 6px, var(--sage) 9px);
+  box-shadow: 0 0 10px rgba(242, 216, 132, 0.25);
+  transform: scaleX(0);
+  transition: transform var(--dur) var(--ease);
+}
+.streak-left { left: calc(var(--edge) + var(--logo) / 2); right: 50%; transform-origin: right center; border-radius: 5px 0 0 5px; }
+.streak-right { right: calc(var(--edge) + var(--logo) / 2); left: 50%; transform-origin: left center; border-radius: 0 5px 5px 0; }
+.streak-logo {
+  position: absolute;
+  top: 50%;
+  width: var(--logo);
+  height: auto;
+  margin-top: calc(var(--logo) * -0.46);
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(242, 216, 132, 0.35));
+  transition: left var(--dur) var(--ease), right var(--dur) var(--ease), opacity 0.35s ease;
+}
+/* the bird faces left in the original icon, so the right one is mirrored */
+.streak-logo-left { left: calc(50% - var(--logo)); }
+.streak-logo-right { right: calc(50% - var(--logo)); transform: scaleX(-1); }
+.divider-streak.go .streak { transform: scaleX(1); }
+.divider-streak.go .streak-logo { opacity: 1; }
+.divider-streak.go .streak-logo-left { left: var(--edge); }
+.divider-streak.go .streak-logo-right { right: var(--edge); }
 @media (max-width: 560px) {
-  .divider-ribbon { height: 28px; background-size: 16px auto; }
+  .divider-streak { --logo: 22px; --edge: 10px; height: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .streak, .streak-logo { transition: none; }
 }
 
 /* ---------- SECTION THEMES (dark base, alternating gold/green wash) ---------- */
