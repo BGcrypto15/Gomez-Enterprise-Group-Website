@@ -4,21 +4,25 @@ import gegIcon from '../assets/geg-icon.png'
 export default function Divider() {
   const ref = useRef(null)
   const [go, setGo] = useState(false)
+  const [live, setLive] = useState(false)
 
   useEffect(() => {
     const el = ref.current
-    if (!el || !('IntersectionObserver' in window)) { setGo(true); return }
+    if (!el || !('IntersectionObserver' in window)) { setGo(true); setLive(true); return }
     const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setGo(true); io.disconnect() }
-    }, { threshold: 0.6 })
+      setLive(entry.isIntersecting)
+      if (entry.intersectionRatio >= 0.6) setGo(true)
+    }, { threshold: [0, 0.6] })
     io.observe(el)
     return () => io.disconnect()
   }, [])
 
+  const cls = ['divider-streak', go && 'go', live && 'live'].filter(Boolean).join(' ')
+
   return (
-    <div ref={ref} className={go ? 'divider-streak go' : 'divider-streak'} role="presentation" aria-hidden="true">
-      <span className="streak streak-left" />
-      <span className="streak streak-right" />
+    <div ref={ref} className={cls} role="presentation" aria-hidden="true">
+      <span className="streak streak-left"><span className="streak-core" /></span>
+      <span className="streak streak-right"><span className="streak-core" /></span>
       <img className="streak-logo streak-logo-left" src={gegIcon} alt="" />
       <img className="streak-logo streak-logo-right" src={gegIcon} alt="" />
     </div>

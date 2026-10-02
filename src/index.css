@@ -51,7 +51,7 @@ nav.site-nav {
   border-bottom: 1px solid rgba(242,216,132,0.18);
 }
 .nav-inner {
-  max-width: var(--max); margin: 0 auto; padding: 14px 28px 14px 14px;
+  max-width: none; margin: 0; padding: 14px clamp(20px, 3vw, 44px) 14px clamp(12px, 2vw, 32px);
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
 }
 .brand { display: flex; align-items: center; text-decoration: none; }
@@ -121,31 +121,131 @@ a.btn.btn-gold, button.btn.btn-gold {
 }
 .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-/* ---------- STREAK DIVIDER (two logos slide from center to the edges) ---------- */
+/* ---------- STREAK DIVIDER (two logos slide out, leaving a glimmering vapor trail) ---------- */
 .divider-streak {
   --logo: 28px;
   --edge: 14px;
-  --dur: 1.5s;
+  --dur: 1.6s;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  height: 46px;
+  height: 50px;
   overflow: hidden;
 }
 .streak {
   position: absolute;
   top: 50%;
-  height: 9px;
-  margin-top: -4.5px;
-  background: linear-gradient(to bottom,
-    var(--gold-light) 0, var(--gold-light) 3px,
-    #0B0C0E 3px, #0B0C0E 6px,
-    var(--sage) 6px, var(--sage) 9px);
-  box-shadow: 0 0 10px rgba(242, 216, 132, 0.25);
-  transform: scaleX(0);
-  transition: transform var(--dur) var(--ease);
+  height: 30px;
+  margin-top: -15px;
+  transition: clip-path var(--dur) var(--ease);
 }
-.streak-left { left: calc(var(--edge) + var(--logo) / 2); right: 50%; transform-origin: right center; border-radius: 5px 0 0 5px; }
-.streak-right { right: calc(var(--edge) + var(--logo) / 2); left: 50%; transform-origin: left center; border-radius: 0 5px 5px 0; }
+.streak-left { left: calc(var(--edge) + var(--logo) / 2); right: 50%; clip-path: inset(0 0 0 100%); --fade: to left; }
+.streak-right { right: calc(var(--edge) + var(--logo) / 2); left: 50%; clip-path: inset(0 100% 0 0); --fade: to right; }
+.divider-streak.go .streak { clip-path: inset(0 0 0 0); }
+
+/* soft vapor that spreads wider the farther it is from the logo */
+.streak::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 8%, rgba(242,216,132,0.55) 38%, rgba(10,11,13,0.7) 50%, rgba(57,106,77,0.6) 62%, transparent 92%);
+  filter: blur(4px);
+  opacity: 0.55;
+}
+.streak-left::before {
+  clip-path: polygon(0 44%, 100% 0, 100% 100%, 0 56%);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, rgba(0,0,0,0.25) 100%);
+          mask-image: linear-gradient(to right, #000 0%, rgba(0,0,0,0.25) 100%);
+}
+.streak-right::before {
+  clip-path: polygon(0 0, 100% 44%, 100% 56%, 0 100%);
+  -webkit-mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,0.25) 100%);
+          mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,0.25) 100%);
+}
+
+/* sparkles drifting in the trail */
+.streak::after {
+  content: '';
+  position: absolute;
+  inset: 4px 0;
+  background-image:
+    radial-gradient(circle, rgba(255,247,214,0.95) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(242,216,132,0.85) 0 1.2px, transparent 2px),
+    radial-gradient(circle, rgba(140,200,160,0.7) 0 1px, transparent 1.6px);
+  background-size: 74px 22px, 121px 22px, 97px 22px;
+  background-position: 0 3px, 30px 15px, 55px 9px;
+  opacity: 0.85;
+  animation: streak-twinkle 2.4s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.streak-left::after {
+  -webkit-mask-image: linear-gradient(to right, #000, transparent 90%);
+          mask-image: linear-gradient(to right, #000, transparent 90%);
+  animation-name: streak-twinkle, streak-drift-left;
+  animation-duration: 2.4s, 9s;
+  animation-timing-function: ease-in-out, linear;
+  animation-direction: alternate, normal;
+}
+.streak-right::after {
+  -webkit-mask-image: linear-gradient(to left, #000, transparent 90%);
+          mask-image: linear-gradient(to left, #000, transparent 90%);
+  animation-name: streak-twinkle, streak-drift-right;
+  animation-duration: 2.4s, 9s;
+  animation-timing-function: ease-in-out, linear;
+  animation-direction: alternate, normal;
+}
+
+/* the bright trail itself: gold, black, green, with a shine that runs along it */
+.streak-core {
+  position: absolute;
+  top: 50%;
+  height: 7px;
+  margin-top: -3.5px;
+  left: 0; right: 0;
+  background: linear-gradient(to bottom,
+    var(--gold-light) 0, var(--gold-light) 2.4px,
+    #0B0C0E 2.4px, #0B0C0E 4.6px,
+    var(--sage) 4.6px, var(--sage) 7px);
+  box-shadow: 0 0 8px rgba(242,216,132,0.45), 0 0 18px rgba(242,216,132,0.18);
+}
+.streak-left .streak-core {
+  border-radius: 4px 0 0 4px;
+  clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 35%, rgba(0,0,0,0.45) 100%);
+          mask-image: linear-gradient(to right, #000 0%, #000 35%, rgba(0,0,0,0.45) 100%);
+}
+.streak-right .streak-core {
+  border-radius: 0 4px 4px 0;
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+  -webkit-mask-image: linear-gradient(to left, #000 0%, #000 35%, rgba(0,0,0,0.45) 100%);
+          mask-image: linear-gradient(to left, #000 0%, #000 35%, rgba(0,0,0,0.45) 100%);
+}
+.streak-core::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0, transparent 38%, rgba(255,252,235,0.95) 50%, transparent 62%, transparent 100%);
+  background-size: 260px 100%;
+  background-repeat: repeat-x;
+  mix-blend-mode: screen;
+  animation: streak-shine-left 2.2s linear infinite;
+  animation-play-state: paused;
+}
+.streak-right .streak-core::after { animation-name: streak-shine-right; }
+.divider-streak.live .streak::after,
+.divider-streak.live .streak-core::after { animation-play-state: running; }
+
+@keyframes streak-shine-left { from { background-position: 0 0; } to { background-position: -260px 0; } }
+@keyframes streak-shine-right { from { background-position: 0 0; } to { background-position: 260px 0; } }
+@keyframes streak-twinkle { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes streak-drift-left {
+  from { background-position: 0 3px, 30px 15px, 55px 9px; }
+  to { background-position: -74px 3px, -91px 15px, -42px 9px; }
+}
+@keyframes streak-drift-right {
+  from { background-position: 0 3px, 30px 15px, 55px 9px; }
+  to { background-position: 74px 3px, 151px 15px, 152px 9px; }
+}
+
 .streak-logo {
   position: absolute;
   top: 50%;
@@ -153,21 +253,22 @@ a.btn.btn-gold, button.btn.btn-gold {
   height: auto;
   margin-top: calc(var(--logo) * -0.46);
   opacity: 0;
-  filter: drop-shadow(0 0 6px rgba(242, 216, 132, 0.35));
+  z-index: 1;
+  filter: drop-shadow(0 0 6px rgba(242,216,132,0.45));
   transition: left var(--dur) var(--ease), right var(--dur) var(--ease), opacity 0.35s ease;
 }
 /* the bird faces left in the original icon, so the right one is mirrored */
 .streak-logo-left { left: calc(50% - var(--logo)); }
 .streak-logo-right { right: calc(50% - var(--logo)); transform: scaleX(-1); }
-.divider-streak.go .streak { transform: scaleX(1); }
 .divider-streak.go .streak-logo { opacity: 1; }
 .divider-streak.go .streak-logo-left { left: var(--edge); }
 .divider-streak.go .streak-logo-right { right: var(--edge); }
 @media (max-width: 560px) {
-  .divider-streak { --logo: 22px; --edge: 10px; height: 36px; }
+  .divider-streak { --logo: 22px; --edge: 10px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .streak, .streak-logo { transition: none; }
+  .streak::after, .streak-core::after { animation: none; }
 }
 
 /* ---------- SECTION THEMES (dark base, alternating gold/green wash) ---------- */
