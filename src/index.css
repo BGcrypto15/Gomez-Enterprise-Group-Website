@@ -375,3 +375,18 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
 .brand-name { font-family: var(--font-display); color: var(--gold-light); font-size: 16px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.2; }
 @media (max-width: 380px) { .brand-name { font-size: 14px; } }
 .hero { padding: 48px 0 64px; }
+
+/* ---------- TEXT US BUTTON + ONE-LINE NAME ---------- */
+.brand-name { white-space: nowrap; font-size: clamp(12.5px, 3.6vw, 16px); letter-spacing: 0.02em; }
+.btn-text-us {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: transparent; color: var(--gold-light); border: 1.5px solid var(--gold-light);
+  font-size: 16px; padding: 13px 28px;
+}
+.btn-text-us:hover { background: rgba(242,216,132,0.10); }
+.hero-phone { margin: 16px 0 0; font-size: 14.5px; color: rgba(251,246,233,0.75); }
+.hero-phone a { color: var(--gold-light); font-weight: 600; text-decoration: none; }
+@media (max-width: 560px) {
+  .hero-ctas { flex-direction: column; align-items: stretch; max-width: 340px; margin: 0 auto; }
+  .hero-ctas .btn { text-align: center; justify-content: center; }
+}
