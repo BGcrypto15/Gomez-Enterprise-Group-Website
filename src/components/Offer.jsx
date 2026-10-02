@@ -11,7 +11,7 @@ export default function Offer() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">Starter Bundle</span>
-          <h2>Everything You Need to Look Legit Online</h2>
+          <h2>Your Business, Online and Ready to Work</h2>
         </div>
         <div className="offer-card">
           <div className="offer-price">
