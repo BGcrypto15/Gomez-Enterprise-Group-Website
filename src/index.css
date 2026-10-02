@@ -390,3 +390,21 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
   .hero-ctas { flex-direction: column; align-items: stretch; max-width: 340px; margin: 0 auto; }
   .hero-ctas .btn { text-align: center; justify-content: center; }
 }
+
+/* ---------- OCTOBER TICKET ---------- */
+.offer-ticket {
+  display: inline-flex; align-items: stretch; border-radius: 10px; overflow: hidden;
+  background:
+    radial-gradient(circle at 0 50%, transparent 7px, var(--gold-light) 7.5px) left / 51% 100% no-repeat,
+    radial-gradient(circle at 100% 50%, transparent 7px, #F7E7B5 7.5px) right / 51% 100% no-repeat;
+  color: var(--charcoal-deep);
+  box-shadow: 0 0 16px rgba(242,216,132,0.45);
+  font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em;
+}
+.ticket-stub { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px 9px 16px; text-transform: uppercase; border-right: 2px dashed rgba(27,28,31,0.35); }
+.ticket-main { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px 9px 14px; font-weight: 600; }
+.ticket-main s { font-weight: 700; text-decoration-thickness: 2px; }
+
+.offer-ticket { white-space: nowrap; font-size: clamp(10.5px, 3vw, 13.5px); max-width: 100%; }
+.ticket-stub { padding: 9px 12px 9px 15px; }
+.ticket-main { padding: 9px 15px 9px 12px; }

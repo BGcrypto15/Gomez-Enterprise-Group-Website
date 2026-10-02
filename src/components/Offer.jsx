@@ -15,7 +15,18 @@ export default function Offer() {
         </div>
         <div className="offer-card">
           <div className="offer-price">
-            <span className="offer-tag">Limited-Time Price</span>
+            <div className="offer-ticket" role="note" aria-label="October only. Normally starts at $1,000.">
+              <span className="ticket-stub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 0 0-4V4H3v4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M14 5v2M14 10v2M14 15v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                October Only
+              </span>
+              <span className="ticket-main">
+                Normally <s>$1,000+</s>
+              </span>
+            </div>
             <span className="offer-amount">$500</span>
             <span className="offer-sub">One price for everything below</span>
             <span className="offer-fast">Website live in as little as 48 hours</span>
