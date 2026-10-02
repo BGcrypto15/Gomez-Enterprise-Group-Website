@@ -24,7 +24,7 @@ export default function Offer() {
                 October Only
               </span>
               <span className="ticket-main">
-                Normally <s>$1,000</s>
+                Normally starting at <s>$1,000</s>
               </span>
             </div>
             <span className="offer-amount">$500</span>
