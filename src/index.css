@@ -128,12 +128,15 @@ a.btn.btn-gold, button.btn.btn-gold {
   --dur: 1.6s;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  height: 50px;
-  overflow: hidden;
+  z-index: 2;
+  height: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  pointer-events: none;
 }
 .streak {
   position: absolute;
-  top: 50%;
+  top: 0;
   height: 30px;
   margin-top: -15px;
   transition: clip-path var(--dur) var(--ease);
@@ -248,7 +251,7 @@ a.btn.btn-gold, button.btn.btn-gold {
 
 .streak-logo {
   position: absolute;
-  top: 50%;
+  top: 0;
   width: var(--logo);
   height: auto;
   margin-top: calc(var(--logo) * -0.46);
@@ -264,7 +267,7 @@ a.btn.btn-gold, button.btn.btn-gold {
 .divider-streak.go .streak-logo-left { left: var(--edge); }
 .divider-streak.go .streak-logo-right { right: var(--edge); }
 @media (max-width: 560px) {
-  .divider-streak { --logo: 22px; --edge: 10px; height: 40px; }
+  .divider-streak { --logo: 22px; --edge: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .streak, .streak-logo { transition: none; }

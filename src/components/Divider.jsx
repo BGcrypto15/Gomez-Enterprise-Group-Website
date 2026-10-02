@@ -11,8 +11,8 @@ export default function Divider() {
     if (!el || !('IntersectionObserver' in window)) { setGo(true); setLive(true); return }
     const io = new IntersectionObserver(([entry]) => {
       setLive(entry.isIntersecting)
-      if (entry.intersectionRatio >= 0.6) setGo(true)
-    }, { threshold: [0, 0.6] })
+      if (entry.isIntersecting) setGo(true)
+    }, { rootMargin: '0px 0px -20% 0px' })
     io.observe(el)
     return () => io.disconnect()
   }, [])
