@@ -1,12 +1,7 @@
-import gegLogo from '../assets/geg-logo-full.png'
-
 export default function Hero() {
   return (
     <header className="hero" id="top">
       <div className="wrap">
-        <div className="hero-icon">
-          <img src={gegLogo} alt="Gomez Enterprise Group logo" />
-        </div>
         <h1>
           Built <em>For You</em>. Built <em>With You</em>. Built <em>By You</em>.
         </h1>

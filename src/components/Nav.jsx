@@ -10,7 +10,8 @@ export default function Nav() {
     <nav className="site-nav">
       <div className="nav-inner">
         <a href="#top" className="brand" aria-label="Gomez Enterprise Group home">
-          <img src={gegIcon} alt="Gomez Enterprise Group icon" />
+          <img src={gegIcon} alt="" />
+          <span className="brand-name">Gomez Enterprise Group</span>
         </a>
         <button
           className="nav-toggle"

@@ -369,3 +369,9 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
   box-shadow: 0 0 10px rgba(242,216,132,0.18), inset 0 0 10px rgba(242,216,132,0.06);
 }
 
+
+/* ---------- NAV WORDMARK + TIGHTER HERO ---------- */
+.brand { gap: 12px; }
+.brand-name { font-family: var(--font-display); color: var(--gold-light); font-size: 16px; font-weight: 600; letter-spacing: 0.04em; line-height: 1.2; }
+@media (max-width: 380px) { .brand-name { font-size: 14px; } }
+.hero { padding: 48px 0 64px; }
