@@ -393,18 +393,24 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
 
 /* ---------- OCTOBER TICKET ---------- */
 .offer-ticket {
-  display: inline-flex; align-items: stretch; border-radius: 10px; overflow: hidden;
-  background:
-    radial-gradient(circle at 0 50%, transparent 7px, var(--gold-light) 7.5px) left / 51% 100% no-repeat,
-    radial-gradient(circle at 100% 50%, transparent 7px, #F7E7B5 7.5px) right / 51% 100% no-repeat;
-  color: var(--charcoal-deep);
+  display: flex; flex-wrap: wrap; justify-content: center; max-width: 100%;
+  border-radius: 10px; overflow: hidden; color: var(--charcoal-deep);
   box-shadow: 0 0 16px rgba(242,216,132,0.45);
-  font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em;
+  font-weight: 700; font-size: 13.5px; letter-spacing: 0.03em; line-height: 1.2;
 }
-.ticket-stub { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px 9px 16px; text-transform: uppercase; border-right: 2px dashed rgba(27,28,31,0.35); }
-.ticket-main { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px 9px 14px; font-weight: 600; }
+.ticket-stub, .ticket-main { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 14px; white-space: nowrap; flex: 1 1 auto; }
+.ticket-stub { background: var(--gold-light); text-transform: uppercase; }
+.ticket-main { background: #F7E7B5; font-weight: 600; border-left: 2px dashed rgba(27,28,31,0.35); }
 .ticket-main s { font-weight: 700; text-decoration-thickness: 2px; }
+@media (max-width: 420px) {
+  .offer-ticket { flex-direction: column; width: 100%; max-width: 260px; }
+  .ticket-main { border-left: 0; border-top: 2px dashed rgba(27,28,31,0.35); }
+}
+@media (max-width: 340px) { .stat-pill { white-space: normal; text-align: center; } }
 
-.offer-ticket { white-space: nowrap; font-size: clamp(10.5px, 3vw, 13.5px); max-width: 100%; }
-.ticket-stub { padding: 9px 12px 9px 15px; }
-.ticket-main { padding: 9px 15px 9px 12px; }
+@media (max-width: 340px) {
+  .brand img { height: 34px; }
+  .brand { gap: 8px; }
+  .brand-name { font-size: 11px; letter-spacing: 0; }
+  .nav-inner { padding-right: 16px; gap: 12px; }
+}
