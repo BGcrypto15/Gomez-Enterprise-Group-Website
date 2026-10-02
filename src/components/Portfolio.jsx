@@ -1,3 +1,7 @@
+import migshotShot from '../assets/work/migshot.jpg'
+import nattyShot from '../assets/work/natty.jpg'
+import slotshotShot from '../assets/work/slotshot.jpg'
+
 const PROJECTS = [
   {
     name: 'Migshot Auto Solutions',
@@ -6,6 +10,7 @@ const PROJECTS = [
     tag: 'Launch Package',
     url: 'https://migshotautosolutions.com',
     link: 'migshotautosolutions.com',
+    shot: migshotShot,
   },
   {
     name: 'The Natty King',
@@ -14,6 +19,7 @@ const PROJECTS = [
     tag: 'Launch Package',
     url: 'https://thedavebrown.website',
     link: 'thedavebrown.website',
+    shot: nattyShot,
   },
   {
     name: 'SlotShot.live',
@@ -22,6 +28,7 @@ const PROJECTS = [
     tag: 'Build-to-Own Systems',
     url: 'https://slotshot.live',
     link: 'slotshot.live',
+    shot: slotshotShot,
   },
   {
     name: 'Card Watch',
@@ -58,7 +65,19 @@ export default function Portfolio() {
         </div>
         <div className="work-grid">
           {PROJECTS.map((p) => (
-            <div className="work-card" key={p.name}>
+            <div className={p.shot ? 'work-card has-shot' : 'work-card'} key={p.name}>
+              {p.shot && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="phone-frame"
+                  aria-label={`Open ${p.name} website`}
+                >
+                  <span className="phone-notch" aria-hidden="true" />
+                  <img src={p.shot} alt={`${p.name} website on a phone`} loading="lazy" width="540" height="960" />
+                </a>
+              )}
               <span className="work-tag">{p.tag}</span>
               <h3>{p.name}</h3>
               <span className="work-type">{p.type}</span>

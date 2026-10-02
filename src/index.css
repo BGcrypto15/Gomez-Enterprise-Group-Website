@@ -414,3 +414,15 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
   .brand-name { font-size: 11px; letter-spacing: 0; }
   .nav-inner { padding-right: 16px; gap: 12px; }
 }
+
+/* ---------- PORTFOLIO PHONE PREVIEWS ---------- */
+.phone-frame {
+  display: block; position: relative; width: min(100%, 230px); aspect-ratio: 9 / 16; margin: 0 auto 22px;
+  border: 7px solid #0E0F11; border-radius: 30px; overflow: hidden; background: #0E0F11;
+  box-shadow: 0 0 0 1.5px rgba(242,216,132,0.45), 0 18px 40px rgba(0,0,0,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.phone-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.phone-notch { position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 34%; height: 14px; border-radius: 10px; background: #0E0F11; z-index: 1; }
+.phone-frame:hover { transform: translateY(-4px); box-shadow: 0 0 0 1.5px rgba(242,216,132,0.8), 0 24px 48px rgba(0,0,0,0.5); }
+@media (prefers-reduced-motion: reduce) { .phone-frame, .phone-frame:hover { transition: none; transform: none; } }
