@@ -1,6 +1,3 @@
-import migshotShot from '../assets/work/migshot.jpg'
-import nattyShot from '../assets/work/natty.jpg'
-import slotshotShot from '../assets/work/slotshot.jpg'
 
 const PROJECTS = [
   {
@@ -10,7 +7,6 @@ const PROJECTS = [
     tag: 'Launch Package',
     url: 'https://migshotautosolutions.com',
     link: 'migshotautosolutions.com',
-    shot: migshotShot,
   },
   {
     name: 'The Natty King',
@@ -19,7 +15,6 @@ const PROJECTS = [
     tag: 'Launch Package',
     url: 'https://thedavebrown.website',
     link: 'thedavebrown.website',
-    shot: nattyShot,
   },
   {
     name: 'SlotShot.live',
@@ -28,7 +23,6 @@ const PROJECTS = [
     tag: 'Build-to-Own Systems',
     url: 'https://slotshot.live',
     link: 'slotshot.live',
-    shot: slotshotShot,
   },
   {
     name: 'Card Watch',
