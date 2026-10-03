@@ -595,3 +595,11 @@ footer { padding: 40px 0 30px; }
 .qr-modal p { color: rgba(251,246,233,0.85); font-size: 14.5px; line-height: 1.5; margin: 0; }
 .qr-close { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; background: none; border: none;
   color: var(--gold-light); font-size: 26px; cursor: pointer; line-height: 1; }
+
+/* ---------- FOUNDER PHOTO ---------- */
+.founder { display: flex; flex-direction: column; align-items: center; margin: -6px 0 30px; }
+.founder img { width: 172px; height: 172px; border-radius: 50%; object-fit: cover; object-position: 50% 20%;
+  border: 3px solid var(--gold-light); box-shadow: 0 0 0 6px rgba(242,216,132,0.12), 0 0 30px rgba(242,216,132,0.25); }
+.founder-name { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 22px; margin: 16px 0 2px; }
+.founder-role { color: var(--gold-light); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0; }
+@media (max-width: 560px) { .founder img { width: 148px; height: 148px; } }
