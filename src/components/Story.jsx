@@ -5,7 +5,7 @@ const STATS = ['15+ Years Experience', '1,000+ Business Owners Across Multiple S
 const COMPANIES = [
   { name: 'Fortune 100', note: 'Wireless & Telecom' },
   { name: 'Fortune 500', note: 'Device Protection & Services' },
-  { name: 'Architectural Aluminum & Glass', note: 'Draftsman & Jr. Project Manager' },
+  { name: 'Project Management & CAD Design', note: 'Certified' },
 ]
 
 export default function Story() {

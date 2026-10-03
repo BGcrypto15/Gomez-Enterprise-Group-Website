@@ -381,6 +381,7 @@ input, select, textarea {
   width: 100%; background: rgba(251,246,233,0.06); border: 1px solid rgba(242,216,132,0.3);
   border-radius: 4px; padding: 12px 14px; color: var(--cream); font-family: var(--font-body); font-size: 14.5px;
 }
+select option, select optgroup { background-color: #26272B; color: #FBF6E9; }
 input::placeholder, textarea::placeholder { color: rgba(251,246,233,0.4); }
 textarea { resize: vertical; min-height: 110px; }
 form.contact-form .btn { justify-self: start; margin-top: 6px; }
