@@ -547,7 +547,7 @@ a.btn.btn-gold:hover, button.btn.btn-gold:hover { box-shadow: 0 0 20px rgba(242,
   .offer-ticket { flex-direction: column; width: 100%; max-width: 260px; }
   .ticket-main { border-left: 0; border-top: 2px dashed rgba(27,28,31,0.35); }
 }
-@media (max-width: 340px) { .stat-pill { white-space: normal; text-align: center; } }
+@media (max-width: 420px) { .stat-pill { white-space: normal; text-align: center; max-width: 100%; } }
 
 @media (max-width: 340px) {
   .brand img { height: 34px; }
