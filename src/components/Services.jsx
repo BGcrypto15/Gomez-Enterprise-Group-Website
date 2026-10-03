@@ -6,13 +6,13 @@ const SERVICES = [
     price: 'Starting at $1,000',
     label: 'Launch Package',
     hook: "For the idea that's been sitting in your notes app too long.",
-    impact: 'The full build-out: turns a passion or an idea into a fully branded, live business, fast. Just need the essentials? Start with the $500 Starter Bundle.',
+    impact: 'The full build-out, plus 90 days of hands-on partnership. We stay involved to plan it, launch it, and grow it with you. Just need the essentials and a written plan? Start with the $500 Starter Bundle.',
     items: [
       'Brand identity: logo, colors, voice',
       'Website build, live and mobile-ready',
       'Social media setup and starter content',
       'Business registration guidance (EIN, structure)',
-      '90-day growth roadmap',
+      '90 days of direct access: we plan and execute together',
     ],
     example:
       'a hobby that turns into a storefront, or a side project that finally gets a real name and a real home online.',

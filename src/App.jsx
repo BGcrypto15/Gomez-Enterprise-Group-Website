@@ -25,11 +25,11 @@ export default function App() {
       <Divider />
       <Portfolio />
       <Divider />
+      <Story />
+      <Divider />
       <FAQ />
       <Divider />
       <Contact />
-      <Divider />
-      <Story />
       <Footer />
       <Analytics />
     </>

@@ -1,6 +1,6 @@
 import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
 
-const STATS = ['15+ Years Experience', '1,000+ Business Owners Across Multiple States', 'Award-Winning Track Record', 'You Own What We Build', 'We Teach You to Run It']
+const STATS = ['15+ Years Experience', '1,000+ Business Owners Across Multiple States', 'Top Company Honors, 3 Times', 'You Own What We Build', 'We Teach You to Run It']
 
 const COMPANIES = [
   { name: 'Fortune 100', note: 'Wireless & Telecom' },
@@ -33,10 +33,16 @@ export default function Story() {
         <div className="story-copy">
           <p>
             I've spent 15+ years inside Fortune 100 and Fortune 500 companies, supporting over
-            1,000 independent business owners across multiple states and delivering results that held up against the
-            best in the country.
-            Before wireless, I worked as a draftsman and junior project manager for architectural
-            aluminum and glass companies.
+            1,000 independent business owners across multiple states. Along the way I earned the
+            highest honor at both companies: the PEAK Award at one, then the Pinnacle Award two
+            years in a row at the other. The first Pinnacle was for my impact on company culture,
+            with work that reached teams from Brazil to the UK. The second was for finishing #1 to
+            goal in the nation.
+          </p>
+          <p>
+            Before the corporate side, I started at a small wireless shop. I worked my way up from
+            sales to store manager and handled the device repairs myself, so I know small business
+            from the inside.
           </p>
           <p>
             Big companies have big budgets, big teams, and big tech. Most small businesses never

@@ -2,7 +2,7 @@ const INCLUDES = [
   'Custom website build or upgrade',
   'Professional logo',
   'QR code for your business',
-  'Business strategy plan',
+  'Written business plan, reviewed with you',
 ]
 
 export default function Offer() {
@@ -30,7 +30,7 @@ export default function Offer() {
             <span className="offer-amount">$500</span>
             <span className="offer-sub">One price for everything below</span>
             <span className="offer-fast">Website live in as little as 48 hours</span>
-            <span className="offer-sub">Need the full build-out? See the Launch Package.</span>
+            <span className="offer-sub">Want us hands-on with you for 90 days? See the Launch Package.</span>
           </div>
           <ul className="offer-list">
             {INCLUDES.map((item) => (

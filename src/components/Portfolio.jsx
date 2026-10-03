@@ -31,16 +31,10 @@ const PROJECTS = [
     tag: 'Build-to-Own Systems',
     status: 'Live demo available',
   },
-  {
-    name: 'Digital Signage',
-    type: 'In-Store Ad Rotation',
-    copy: 'Custom software that rotates a business’s ads and promos on in-store screens.',
-    tag: 'Build-to-Own Systems',
-    status: 'In development',
-  },
 ]
 
 const CUSTOM = [
+  'Digital signage for in-store screens',
   'Online booking with automatic text reminders',
   'Customer loyalty and rewards programs',
   'Client portals and simple CRMs to track customers and jobs',
