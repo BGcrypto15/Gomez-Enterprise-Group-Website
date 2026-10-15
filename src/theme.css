@@ -1,22 +1,22 @@
-/* THEME: neon. Only color tokens live here so the look can be swapped per branch. */
+/* THEME: gold and green. Only color tokens live here so the look can be swapped per branch. */
 :root {
-  --bg: #09090C;
-  --bg-2: #0F0F14;
-  --surface: #14141A;
-  --surface-2: #1B1B23;
-  --line: rgba(255, 255, 255, 0.1);
-  --text: #F5F3F8;
-  --muted: rgba(245, 243, 248, 0.7);
-  --a1: #FFB11A;
-  --a2: #FF3D77;
-  --a3: #9A3CFF;
-  --grad: linear-gradient(105deg, #FFB11A 0%, #FF3D77 48%, #9A3CFF 100%);
-  --grad-soft: linear-gradient(135deg, rgba(255, 177, 26, 0.16), rgba(255, 61, 119, 0.14) 50%, rgba(154, 60, 255, 0.18));
-  --screen: linear-gradient(135deg, #FFC21A 0%, #FF4D6D 55%, #8E2DE2 100%);
-  --glow-1: rgba(255, 61, 119, 0.5);
-  --glow-2: rgba(154, 60, 255, 0.45);
-  --glow-3: rgba(255, 177, 26, 0.35);
-  --btn-bg: #F1EFF5;
-  --btn-ink: #0B0B0F;
-  --tile-ink: #FFFFFF;
+  --bg: #0A0B0A;
+  --bg-2: #101211;
+  --surface: #151716;
+  --surface-2: #1C1F1D;
+  --line: rgba(255, 244, 214, 0.11);
+  --text: #FBF6E9;
+  --muted: rgba(251, 246, 233, 0.7);
+  --a1: #D9B45A;
+  --a2: #F2D884;
+  --a3: #3E9B6C;
+  --grad: linear-gradient(105deg, #E3C26B 0%, #F7E3A0 45%, #4FB382 100%);
+  --grad-soft: linear-gradient(135deg, rgba(227, 194, 107, 0.16), rgba(247, 227, 160, 0.1) 50%, rgba(62, 155, 108, 0.18));
+  --screen: linear-gradient(135deg, #F7E3A0 0%, #C9A24D 52%, #1F6B47 100%);
+  --glow-1: rgba(242, 216, 132, 0.4);
+  --glow-2: rgba(62, 155, 108, 0.4);
+  --glow-3: rgba(201, 162, 77, 0.35);
+  --btn-bg: #F2D884;
+  --btn-ink: #14120A;
+  --tile-ink: #1A1608;
 }
