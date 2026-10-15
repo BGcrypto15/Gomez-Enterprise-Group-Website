@@ -1,7 +1,7 @@
 import { Reveal, Scramble } from './Reveal.jsx'
 import { GlossIcon, Arrow } from './Icons.jsx'
 
-// Prices not confirmed yet show this text. Replace with real "Starting at" numbers when set.
+// Any row whose price equals this text renders as a quote request instead of a number.
 const PRICE_PENDING = 'Quote at consultation'
 
 const PACKAGES = [
@@ -13,10 +13,10 @@ const PACKAGES = [
 ]
 
 const EXTRAS = [
-  { icon: 'ai', name: 'AI Coaching', tags: ['One-on-one', 'Plain English', 'Job, business, or career'], price: PRICE_PENDING },
-  { icon: 'tech', name: 'Tech Setup & Support', tags: ['WiFi and extenders', 'Security cameras', 'New devices', 'Fixes'], price: PRICE_PENDING },
-  { icon: 'social', name: 'Social Media Content', tags: ['Planned', 'Designed in your brand', 'Scheduled', 'Or learn to run it'], price: PRICE_PENDING },
-  { icon: 'apparel', name: 'Branded Apparel & QR Codes', tags: ['Shirts with your logo', 'QR to your site, menu, or reviews'], price: PRICE_PENDING },
+  { icon: 'ai', name: 'AI Coaching', tags: ['One-on-one', 'Plain English', 'Job, business, or career'], price: 'From $75', per: '/session' },
+  { icon: 'tech', name: 'Tech Setup & Support', tags: ['WiFi and extenders', 'Security cameras', 'New devices', 'Fixes'], price: 'From $75', note: 'Camera systems and larger jobs are quoted after a quick call.' },
+  { icon: 'social', name: 'Social Media Content', tags: ['Planned', 'Designed in your brand', 'Scheduled', 'Or learn to run it'], price: 'From $300', per: '/mo' },
+  { icon: 'apparel', name: 'Branded Apparel & QR Codes', tags: ['Shirts with your logo', 'QR to your site, menu, or reviews'], price: 'From $25', note: 'QR codes start at $25. Shirts are priced per order.' },
 ]
 
 function Row({ r, i }) {
