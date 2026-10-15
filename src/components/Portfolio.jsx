@@ -8,6 +8,9 @@ import nattyPoster from '../assets/work/natty-poster.jpg'
 import slotshotVideo from '../assets/work/slotshot.mp4'
 import slotshotWebm from '../assets/work/slotshot.webm'
 import slotshotPoster from '../assets/work/slotshot-poster.jpg'
+import cardVideo from '../assets/work/cardwatch.mp4'
+import cardWebm from '../assets/work/cardwatch.webm'
+import cardPoster from '../assets/work/cardwatch-poster.jpg'
 import { Reveal, Scramble, prefersReducedMotion } from './Reveal.jsx'
 import { Arrow } from './Icons.jsx'
 
@@ -114,7 +117,7 @@ export default function Portfolio() {
               </div>
             </Reveal>
           ))}
-          <Reveal className="work-item glow-card">
+          <Reveal className="work-item flip glow-card">
             <div className="work-text">
               <span className="eyebrow">Local jobs &middot; Web app</span>
               <h3>MapHire</h3>
@@ -125,12 +128,17 @@ export default function Portfolio() {
             </div>
             <MapArt />
           </Reveal>
-          <Reveal className="work-item glow-card work-demo">
+          <Reveal className="work-item glow-card">
             <div className="work-text">
               <span className="eyebrow">Inventory alerts &middot; Custom software</span>
               <h3>Card Watch</h3>
               <p>Watches stock around the clock and alerts collectors by phone call and message the moment new product lands.</p>
               <span className="demo-pill"><i /> Live demo available</span>
+            </div>
+            <div className="phone-stage">
+              <div className="phone-frame">
+                <ClipVideo src={cardVideo} webm={cardWebm} poster={cardPoster} label="Scrolling preview of the Card Watch dashboard" />
+              </div>
             </div>
           </Reveal>
         </div>
