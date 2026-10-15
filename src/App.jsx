@@ -22,9 +22,9 @@ export default function App() {
       <Services />
       <Packages />
       <Portfolio />
-      <Story />
       <FAQ />
       <Contact />
+      <Story />
       <Footer />
       <Analytics />
     </>
