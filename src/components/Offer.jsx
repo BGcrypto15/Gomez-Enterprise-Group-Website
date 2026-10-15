@@ -34,7 +34,7 @@ export default function Offer() {
             <span className="offer-one">One price</span>
           </div>
           <p>Everything you need to look established online, without waiting for someday.</p>
-          <p className="offer-fine">Website live in as little as 48 hours after your content and photos are ready. Want us hands-on for 90 days? See the Launch Package below.</p>
+          <p className="offer-fine">Website live in as little as 24 hours after your content and photos are ready. Want us hands-on for 90 days? See the Launch Package below.</p>
           <a href="#contact" className="btn btn-light">Claim the $500 bundle <Arrow /></a>
         </div>
         <Reveal className="glow-card offer-card">

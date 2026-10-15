@@ -8,7 +8,6 @@ export default function Hero() {
     <header className="hero" id="top">
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <span className="eyebrow">Philadelphia roots &middot; Anywhere you build</span>
           <h1>
             Build a business people <em className="grad-text">believe</em> in.
           </h1>

@@ -22,8 +22,8 @@ h3 { font-size: 22px; letter-spacing: -0.02em; }
 :focus-visible { outline: 2px solid var(--a2); outline-offset: 3px; border-radius: 6px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
 .center { text-align: center; margin-top: 36px; }
-section { position: relative; padding: 104px 0; }
-.section-head { max-width: 720px; margin-bottom: 44px; }
+section { position: relative; padding: 88px 0; }
+.section-head { max-width: 720px; margin-bottom: 36px; }
 .section-head .sub { color: var(--muted); font-size: 18px; margin-top: 8px; }
 
 .grad-text { font-style: normal; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
@@ -129,10 +129,10 @@ button.btn { font-family: var(--font-body); }
 @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 
 /* steps */
-.steps { padding: 40px 0 80px; }
+.steps { padding: 24px 0 56px; }
 .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 .steps-device { position: sticky; top: calc(var(--nav-h) + 40px); }
-.step { min-height: 62vh; display: flex; flex-direction: column; justify-content: center; opacity: 0.35; transition: opacity 0.5s; }
+.step { min-height: 54vh; display: flex; flex-direction: column; justify-content: center; opacity: 0.35; transition: opacity 0.5s; }
 .step.on { opacity: 1; }
 .step p { color: var(--muted); font-size: 18px; max-width: 440px; }
 
@@ -283,11 +283,13 @@ button.btn { font-family: var(--font-body); }
 
 /* responsive */
 @media (max-width: 960px) {
-  section { padding: 76px 0; }
-  .hero { min-height: 0; padding-top: calc(var(--nav-h) + 28px); }
-  .hero-grid, .offer-grid, .steps-grid { grid-template-columns: 1fr; gap: 36px; }
-  .steps-device { position: sticky; top: calc(var(--nav-h) + 8px); z-index: 2; max-width: 360px; margin: 0 auto; padding: 4px 0 8px; background: linear-gradient(var(--bg) 70%, transparent); }
-  .step { min-height: 46vh; }
+  section { padding: 60px 0; }
+  .hero { min-height: 0; padding-top: calc(var(--nav-h) + 20px); padding-bottom: 40px; }
+  .hero-grid, .offer-grid { grid-template-columns: 1fr; gap: 28px; } .steps-grid { grid-template-columns: 1fr; gap: 0; }
+  .steps-device { position: sticky; top: calc(var(--nav-h) + 4px); z-index: 2; width: 100%; margin: 0; padding: 14px max(0px, calc((100% - 270px) / 2)) 30px; background: linear-gradient(var(--bg) 0, var(--bg) 86%, transparent); }
+  .steps { padding: 8px 0 32px; }
+  .step { min-height: 32vh; }
+  .hero-visual { display: none; }
   .work-item, .work-item.flip { grid-template-columns: 1fr; gap: 24px; padding: 24px; } .work-item.flip .work-text { order: 0; }
   .nav-toggle { display: inline-flex; }
   .nav-links { position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(9, 9, 12, 0.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); display: none; }
@@ -297,6 +299,14 @@ button.btn { font-family: var(--font-body); }
 }
 @media (max-width: 640px) {
   .wrap, .nav-inner { padding: 0 20px; }
+  section { padding: 48px 0; }
+  .section-head { margin-bottom: 24px; }
+  .p-sub { margin: 32px 0 10px; }
+  .price-note { margin-top: 20px; }
+  .work-list { gap: 16px; } .work-item, .work-item.flip { padding: 18px; gap: 18px; }
+  .story-copy { margin: 28px 0 20px; }
+  .faq-item summary { padding: 18px 36px 18px 0; } .faq-item p { padding-bottom: 18px; }
+  .offer-referral { margin-top: 24px; }
   .brand-name { font-size: 15px; }
   .tab-card { padding: 24px; } .tc-top { gap: 14px; } .tc-top .gloss { width: 56px !important; height: 56px !important; }
   .p-row { grid-template-columns: auto 1fr; gap: 14px; padding: 22px 0; }
@@ -304,7 +314,7 @@ button.btn { font-family: var(--font-body); }
   .stats { grid-template-columns: 1fr; } .stat, .stat:first-child { border-left: 0; border-top: 1px solid var(--line); padding: 24px 0; } .stat:first-child { border-top: 0; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 22px; }
-  .contact { padding: 84px 0 72px; }
+  .contact { padding: 64px 0 52px; }
   .hero-ctas .btn { flex: 1 1 100%; } .hero-ctas .btn-link { flex: 0 0 auto; }
 }
 @media (max-width: 380px) { h1 { font-size: 36px; } .brand-name { display: none; } }

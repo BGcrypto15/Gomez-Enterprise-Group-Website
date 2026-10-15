@@ -19,7 +19,7 @@ export default function Story() {
         <div className="stats">
           <div className="stat"><b className="grad-text"><CountUp to={15} suffix="+" /></b><span>Years of experience</span></div>
           <div className="stat"><b className="grad-text"><CountUp to={1000} suffix="+" /></b><span>Business owners supported and managed</span></div>
-          <div className="stat"><b className="grad-text"><CountUp to={48} /></b><span>Hours, fastest website launch</span></div>
+          <div className="stat"><b className="grad-text"><CountUp to={24} /></b><span>Hours, fastest website launch</span></div>
         </div>
         <div className="pill-row">
           <span>Multiple top company honors</span>

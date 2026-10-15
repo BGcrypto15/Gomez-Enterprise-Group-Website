@@ -117,7 +117,7 @@ export default function Contact() {
               <option>AI Coaching</option>
               <option>Tech Setup &amp; Support</option>
               <option>Social Media Content</option>
-              <option>Branded Apparel or QR Codes</option>
+              <option>Branded Apparel</option>
               <option>Not sure yet</option>
             </select>
           </div>
