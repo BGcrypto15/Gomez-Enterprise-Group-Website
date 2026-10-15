@@ -1,5 +1,4 @@
 import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
-import benPhoto from '../assets/ben-headshot.jpg'
 
 const STATS = ['15+ Years Experience', '1,000+ Business Owners Supported & Managed', 'Multiple Top Company Honors', 'You Own What We Build', 'We Teach You to Run It']
 
@@ -18,7 +17,6 @@ export default function Story() {
           <h2>Built on Real Experience.</h2>
         </div>
         <div className="founder">
-          <img src={benPhoto} alt="Benny Gomez Jr., founder of Gomez Enterprise Group" width="560" height="560" loading="lazy" />
           <p className="founder-name">Benny Gomez Jr.</p>
           <p className="founder-role">Founder</p>
         </div>
