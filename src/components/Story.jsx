@@ -1,6 +1,4 @@
-import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
 import { CountUp, Reveal, Scramble } from './Reveal.jsx'
-import { Arrow } from './Icons.jsx'
 
 const COMPANIES = [
   { name: 'Fortune 100', note: 'Wireless & Telecom' },
@@ -55,14 +53,6 @@ export default function Story() {
           </p>
           <p className="signoff">Benny Gomez Jr. <span>Founder</span></p>
         </Reveal>
-        <div className="story-ctas">
-          {BOOKING_ENABLED && (
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light">
-              Book a free call <Arrow />
-            </a>
-          )}
-          <a href="#contact" className="btn btn-ghost">Send a message</a>
-        </div>
       </div>
     </section>
   )
