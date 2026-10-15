@@ -16,7 +16,7 @@ const EXTRAS = [
   { icon: 'ai', name: 'AI Coaching', tags: ['One-on-one', 'Plain English', 'Job, business, or career'], price: 'From $75', per: '/session' },
   { icon: 'tech', name: 'Tech Setup & Support', tags: ['WiFi and extenders', 'Security cameras', 'New devices', 'Fixes'], price: 'From $75', note: 'Camera systems and larger jobs are quoted after a quick call.' },
   { icon: 'social', name: 'Social Media Content', tags: ['Planned', 'Designed in your brand', 'Scheduled', 'Or learn to run it'], price: 'From $200', per: '/mo' },
-  { icon: 'apparel', name: 'Branded Apparel', tags: ['Shirts with your logo', 'Custom orders'], price: PRICE_PENDING, note: 'Priced per order, quoted before we start.' },
+  { icon: 'apparel', name: 'Branded Apparel', tags: ['Shirts with your logo', 'Custom orders', 'QR code included'], price: PRICE_PENDING, note: 'Priced per order, quoted before we start.' },
 ]
 
 function Row({ r, i }) {
