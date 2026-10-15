@@ -1,10 +1,10 @@
 import { useState } from 'react'
+import { GlossIcon } from './Icons.jsx'
+import { Scramble } from './Reveal.jsx'
 
 const SERVICES = [
   {
-    id: 'launch',
-    price: 'Starting at $1,000',
-    label: 'Launch Package',
+    id: 'launch', icon: 'launch', price: 'Starting at $1,000', label: 'Launch Package',
     hook: "For the idea that's been sitting in your notes app too long.",
     impact: 'The full build-out, plus 90 days of hands-on partnership. We stay involved to plan it, launch it, and grow it with you. Just need the essentials and a written plan? Start with the $500 Starter Bundle.',
     items: [
@@ -14,14 +14,11 @@ const SERVICES = [
       'Business registration guidance (EIN, structure)',
       '90 days of direct access: we plan and execute together',
     ],
-    example:
-      'a hobby that turns into a storefront, or a side project that finally gets a real name and a real home online.',
+    example: 'a hobby that turns into a storefront, or a side project that finally gets a real name and a real home online.',
   },
   {
-    id: 'growth',
-    price: 'Starting at $500',
-    label: 'Growth Advisory',
-    hook: "For businesses that are running, but not running efficiently.",
+    id: 'growth', icon: 'growth', price: 'Starting at $500', label: 'Growth Advisory',
+    hook: 'For businesses that are running, but not running efficiently.',
     impact: 'Brings structure, accountability, and a clear plan to businesses that have outgrown guesswork.',
     items: [
       'Performance and partner audits',
@@ -29,15 +26,12 @@ const SERVICES = [
       'Monthly advisory and check-ins',
       'Training and accountability systems',
     ],
-    example: 'a multi-location business that needs its numbers reviewed and a real plan to fix what\u2019s slipping.',
+    example: 'a multi-location business that needs its numbers reviewed and a real plan to fix what’s slipping.',
   },
   {
-    id: 'systems',
-    price: 'Starting at $500',
-    label: 'Build-to-Own Systems',
+    id: 'systems', icon: 'apps', price: 'Starting at $500', label: 'Build-to-Own Systems',
     hook: 'Why rent software when you can own it outright.',
-    impact:
-      'Custom-built tools and systems, designed around exactly how you work, for markets bigger companies never bother building for, no subscription required.',
+    impact: 'Custom-built tools and systems, designed around exactly how you work, for markets bigger companies never bother building for, no subscription required.',
     items: [
       'Custom tracking and management systems',
       'Workflow and reporting automation',
@@ -53,12 +47,9 @@ const SERVICES = [
     exampleClose: 'Built to your spec and yours to keep.',
   },
   {
-    id: 'fractional',
-    price: 'Starting at $1,500/month',
-    label: 'Fractional Executive Partner',
+    id: 'fractional', icon: 'leader', price: 'Starting at $1,500/month', label: 'Fractional Executive Partner',
     hook: 'Senior operational leadership, without the executive salary.',
-    impact:
-      "Embedded performance and operations support for businesses of any size that need more structure than a consultant, but aren't ready for a full-time hire.",
+    impact: "Embedded performance and operations support for businesses of any size that need more structure than a consultant, but aren't ready for a full-time hire.",
     items: [
       'Weekly leadership syncs',
       'KPI dashboard build and maintenance',
@@ -74,17 +65,19 @@ export default function Services() {
   const current = SERVICES.find((s) => s.id === active)
 
   return (
-    <section className="theme-green-wash" id="services">
+    <section className="services" id="services">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow">Explore Our Services</span>
-          <h2>Pick the Path That Fits Where You Are</h2>
+          <span className="eyebrow">Explore our services</span>
+          <Scramble as="h2" parts={[{ t: 'Pick the path that ', hl: false }, { t: 'fits.', hl: true }]} />
         </div>
 
-        <div className="tabs">
+        <div className="tabs" role="tablist" aria-label="Services">
           {SERVICES.map((s) => (
             <button
               key={s.id}
+              role="tab"
+              aria-selected={active === s.id}
               className={`tab-btn ${active === s.id ? 'active' : ''}`}
               onClick={() => setActive(s.id)}
             >
@@ -93,35 +86,32 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="tab-panel active">
-          <div className="tab-card">
-            <span className="price-tag">{current.price}</span>
-            <p className="hook">{current.hook}</p>
-            <p className="impact">{current.impact}</p>
-            <ul>
-              {current.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            {Array.isArray(current.example) ? (
-              <div className="example">
-                <strong>The type of work:</strong>
-                <ul className="example-list">
-                  {current.example.map((ex) => (
-                    <li key={ex}>{ex}</li>
-                  ))}
-                </ul>
-                {current.exampleClose && <p className="example-close">{current.exampleClose}</p>}
-              </div>
-            ) : (
-              <p className="example">
-                <strong>The type of work:</strong> {current.example}
-              </p>
-            )}
+        <div className="tab-card glow-card" role="tabpanel" key={current.id}>
+          <div className="tc-top">
+            <GlossIcon name={current.icon} size={72} />
+            <div>
+              <span className="price-tag">{current.price}</span>
+              <h3>{current.label}</h3>
+            </div>
           </div>
-          <p className="price-note">
-            Starting prices cover smaller projects. Bigger builds get a custom quote after your free consultation.
-          </p>
+          <p className="hook">{current.hook}</p>
+          <p className="impact">{current.impact}</p>
+          <ul className="chip-list">
+            {current.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          {Array.isArray(current.example) ? (
+            <div className="example">
+              <strong>The type of work</strong>
+              <ul className="example-list">
+                {current.example.map((ex) => (<li key={ex}>{ex}</li>))}
+              </ul>
+              {current.exampleClose && <p className="example-close">{current.exampleClose}</p>}
+            </div>
+          ) : (
+            <p className="example"><strong>The type of work</strong> {current.example}</p>
+          )}
         </div>
       </div>
     </section>

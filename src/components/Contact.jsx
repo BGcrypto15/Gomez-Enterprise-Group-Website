@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
+import { Scramble } from './Reveal.jsx'
+import { Arrow } from './Icons.jsx'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdenpyrv'
 
 const INITIAL_FORM = {
@@ -40,10 +42,10 @@ export default function Contact() {
 
   if (status === 'success') {
     return (
-      <section className="theme-charcoal" id="contact">
+      <section className="contact" id="contact">
         <div className="wrap contact-inner">
-          <span className="eyebrow">Let's Talk</span>
-          <h2>Got It.</h2>
+          <span className="eyebrow">Let's talk</span>
+          <h2>Got it.</h2>
           <p className="sub">Thanks for reaching out. We'll get back to you within 24 hours.</p>
           {BOOKING_ENABLED && (<p className="sub">
             Want to lock in a time now?{' '}
@@ -58,17 +60,17 @@ export default function Contact() {
   }
 
   return (
-    <section className="theme-charcoal" id="contact">
+    <section className="contact" id="contact">
       <div className="wrap contact-inner">
-        <span className="eyebrow">Let's Talk</span>
-        <h2>What Do You Want to Build?</h2>
+        <span className="eyebrow">Let's talk about your next step</span>
+        <Scramble as="h2" parts={[{ t: 'What do you want to ', hl: false }, { t: 'build?', hl: true }]} />
         <p className="sub">
           Start with a free consultation. No obligation, just a real conversation about what's next.
         </p>
         {BOOKING_ENABLED ? (
           <div className="contact-options">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
-              Book a Call
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light">
+              Book your free 30-minute call <Arrow />
             </a>
             <span className="contact-or">or send us a message below. We reply within 24 hours.</span>
           </div>
@@ -129,13 +131,14 @@ export default function Contact() {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-gold" disabled={status === 'sending'}>
+          <button type="submit" className="btn btn-light" disabled={status === 'sending'}>
             {status === 'sending' ? 'Sending...' : 'Send It'}
           </button>
           {status === 'error' && (
             <p className="form-error">Something went wrong. Please try sending it again in a minute.</p>
           )}
         </form>
+        <p className="contact-ref">Refer someone and earn $100 cash after their project is paid in full.</p>
       </div>
     </section>
   )

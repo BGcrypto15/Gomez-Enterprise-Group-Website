@@ -1,6 +1,6 @@
 import { BOOKING_ENABLED, CALENDLY_URL } from '../booking.js'
-
-const STATS = ['15+ Years Experience', '1,000+ Business Owners Supported & Managed', 'Multiple Top Company Honors', 'You Own What We Build', 'We Teach You to Run It']
+import { CountUp, Reveal, Scramble } from './Reveal.jsx'
+import { Arrow } from './Icons.jsx'
 
 const COMPANIES = [
   { name: 'Fortune 100', note: 'Wireless & Telecom' },
@@ -10,31 +10,32 @@ const COMPANIES = [
 
 export default function Story() {
   return (
-    <section className="theme-gold-wash" id="about">
+    <section className="story" id="about">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow">The Gomez Family</span>
-          <h2>Built on Real Experience.</h2>
+          <span className="eyebrow">The Gomez family</span>
+          <Scramble as="h2" parts={[{ t: 'Built on real ', hl: false }, { t: 'experience.', hl: true }]} />
         </div>
-        <div className="founder">
-          <p className="founder-name">Benny Gomez Jr.</p>
-          <p className="founder-role">Founder</p>
+        <div className="stats">
+          <div className="stat"><b className="grad-text"><CountUp to={15} suffix="+" /></b><span>Years of experience</span></div>
+          <div className="stat"><b className="grad-text"><CountUp to={1000} suffix="+" /></b><span>Business owners supported and managed</span></div>
+          <div className="stat"><b className="grad-text"><CountUp to={48} /></b><span>Hours, fastest website launch</span></div>
         </div>
-        <div className="stat-row">
-          {STATS.map((s) => (
-            <span className="stat-pill" key={s}>{s}</span>
-          ))}
+        <div className="pill-row">
+          <span>Multiple top company honors</span>
+          <span>You own what we build</span>
+          <span>We teach you to run it</span>
         </div>
-        <p className="worked-label">Experience Across</p>
+        <p className="worked-label">Experience across</p>
         <div className="company-row">
           {COMPANIES.map((c) => (
             <div className="company-chip" key={c.name}>
-              <span className="company-name">{c.name}</span>
-              <span className="company-note">{c.note}</span>
+              <b>{c.name}</b>
+              <span>{c.note}</span>
             </div>
           ))}
         </div>
-        <div className="story-copy">
+        <Reveal className="story-copy">
           <p>
             I've spent 15+ years inside Fortune 100 and Fortune 500 companies, supporting and
             managing over 1,000 independent business owners across multiple states. Along the way I
@@ -52,16 +53,15 @@ export default function Story() {
             get any of that. I started Gomez Enterprise Group to close that gap, and I built it
             under the family name because it's meant to last for generations.
           </p>
-        </div>
+          <p className="signoff">Benny Gomez Jr. <span>Founder</span></p>
+        </Reveal>
         <div className="story-ctas">
           {BOOKING_ENABLED && (
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-glow">
-              Book a Free Call
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light">
+              Book a free call <Arrow />
             </a>
           )}
-          <a href="#contact" className={BOOKING_ENABLED ? 'btn btn-outline' : 'btn btn-gold'}>
-            {BOOKING_ENABLED ? 'Send a Message' : 'Get Your Free Consultation'}
-          </a>
+          <a href="#contact" className="btn btn-ghost">Send a message</a>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { Scramble } from './Reveal.jsx'
+
 const FAQS = [
   {
     q: 'Do I really own what you build?',
@@ -31,11 +33,11 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section className="theme-gold-wash" id="faq">
+    <section className="faq" id="faq">
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">Questions</span>
-          <h2>Straight Answers</h2>
+          <Scramble as="h2" parts={[{ t: 'Straight ', hl: false }, { t: 'answers.', hl: true }]} />
         </div>
         <div className="faq-list">
           {FAQS.map((f) => (

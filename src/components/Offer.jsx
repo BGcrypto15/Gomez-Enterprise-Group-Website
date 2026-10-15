@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+import { Reveal, Scramble, useInView } from './Reveal.jsx'
+import { Arrow } from './Icons.jsx'
+
 const INCLUDES = [
   'Custom website build or upgrade',
   'Professional logo',
@@ -6,39 +10,51 @@ const INCLUDES = [
 ]
 
 export default function Offer() {
+  const [ref, seen] = useInView({ threshold: 0.4 })
+  const [on, setOn] = useState(0)
+
+  useEffect(() => {
+    if (!seen) return
+    const timers = INCLUDES.map((_, i) => setTimeout(() => setOn(i + 1), 350 + i * 260))
+    return () => timers.forEach(clearTimeout)
+  }, [seen])
+
   return (
-    <section className="theme-gold-wash" id="starter">
-      <div className="wrap">
-        <div className="section-head">
-          <span className="eyebrow">Starter Bundle</span>
-          <h2>Your Business, Online and Ready to Work</h2>
-        </div>
-        <div className="offer-card">
-          <div className="offer-price">
-            <div className="offer-ticket" role="note" aria-label="October only. Normally starts at $1,000.">
-              <span className="ticket-stub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 0 0-4V4H3v4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                  <path d="M14 5v2M14 10v2M14 15v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-                October Only
-              </span>
-              <span className="ticket-main">
-                Normally starting at <s>$1,000</s>
-              </span>
-            </div>
-            <span className="offer-amount">$500</span>
-            <span className="offer-sub">One price for everything below</span>
-            <span className="offer-fast">Website live in as little as 48 hours</span>
-            <span className="offer-sub">Want us hands-on with you for 90 days? See the Launch Package.</span>
+    <section className="offer" id="starter">
+      <div className="wrap offer-grid">
+        <div className="offer-copy">
+          <span className="eyebrow">A good place to start</span>
+          <Scramble as="h2" parts={[{ t: 'Starter Bundle', hl: false }]} />
+          <div className="offer-ticket" role="note" aria-label="October only. Normally starts at $1,000.">
+            <span className="ticket-pill">October only</span>
+            <span>Normally starting at <s>$1,000</s></span>
           </div>
-          <ul className="offer-list">
-            {INCLUDES.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <a href="#contact" className="btn btn-glow">Claim the $500 Bundle</a>
+          <div className="offer-price">
+            <span className="offer-amount">$500</span>
+            <span className="offer-one">One price</span>
+          </div>
+          <p>Everything you need to look established online, without waiting for someday.</p>
+          <p className="offer-fine">Website live in as little as 48 hours after your content and photos are ready. Want us hands-on for 90 days? See the Launch Package below.</p>
+          <a href="#contact" className="btn btn-light">Claim the $500 bundle <Arrow /></a>
         </div>
+        <Reveal className="glow-card offer-card">
+          <div ref={ref}>
+            <div className="oc-head">
+              <span>Starter bundle</span>
+              <span>{on} of {INCLUDES.length} on</span>
+            </div>
+            <ul className="toggles">
+              {INCLUDES.map((t, i) => (
+                <li key={t} className={i < on ? 'is-on' : ''}>
+                  <span>{t}</span>
+                  <span className="switch" aria-hidden="true"><i /></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </div>
+      <div className="wrap">
         <p className="offer-referral">
           Know someone who needs this? Earn <strong>$100 cash</strong> for every client you refer,
           paid once their project is paid in full.

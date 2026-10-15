@@ -3,7 +3,7 @@ import PhoneAction from './PhoneAction.jsx'
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="site-foot">
       <div className="wrap">
         <p className="footer-title">Get in Touch</p>
         <div className="footer-actions">
