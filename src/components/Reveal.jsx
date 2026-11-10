@@ -36,46 +36,34 @@ export function Reveal({ as: Tag = 'div', delay = 0, className = '', children, .
   )
 }
 
-const GLYPHS = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnpqrstuvwxyz0123456789#%&*+'
-
-// Headline. Fades up by default; pass scramble to have the letters scramble into place. parts: [{ t: 'text', hl: true|false }]
-// The real text is always in aria-label, so screen readers and search see the final words.
-export function Scramble({ as: Tag = 'h2', parts, className = '', scramble = false }) {
+// Headline. Fades up by default. Pass rise to have the words lift into place one at a time,
+// with the highlighted phrase landing last. parts: [{ t: 'text', hl: true|false }]
+export function Scramble({ as: Tag = 'h2', parts, className = '', rise = false }) {
   const full = parts.map((p) => p.t).join('')
   const [ref, seen] = useInView({ threshold: 0.4 })
-  const [shown, setShown] = useState(full)
-  const started = useRef(false)
 
-  useEffect(() => {
-    if (!scramble || !seen || started.current || prefersReducedMotion()) return
-    started.current = true
-    const start = performance.now()
-    const dur = 750
-    let raf = 0
-    const tick = (now) => {
-      const p = Math.min(1, (now - start) / dur)
-      const lock = Math.floor(p * full.length)
-      let out = ''
-      for (let i = 0; i < full.length; i++) {
-        const c = full[i]
-        out += i < lock || c === ' ' ? c : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]
-      }
-      setShown(p >= 1 ? full : out)
-      if (p < 1) raf = requestAnimationFrame(tick)
-    }
-    setShown(full.replace(/[^ ]/g, ' '))
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [seen, full, scramble])
+  if (!rise) {
+    return (
+      <Tag ref={ref} className={`reveal ${seen ? 'in' : ''} ${className}`.trim()}>
+        {parts.map((p, i) => (p.hl ? <em key={i} className="grad-text">{p.t}</em> : <span key={i}>{p.t}</span>))}
+      </Tag>
+    )
+  }
 
-  let cursor = 0
+  let n = 0
   return (
-    <Tag ref={ref} className={`${scramble ? 'scramble' : `reveal ${seen ? 'in' : ''}`} ${className}`.trim()} aria-label={full}>
+    <Tag ref={ref} className={`rise ${seen ? 'in' : ''} ${className}`.trim()} aria-label={full}>
       <span aria-hidden="true">
         {parts.map((p, i) => {
-          const slice = shown.slice(cursor, cursor + p.t.length)
-          cursor += p.t.length
-          return p.hl ? <em key={i} className="grad-text">{slice}</em> : <span key={i}>{slice}</span>
+          if (p.hl) {
+            const d = n++ * 80 + 120
+            return <em key={i} className="grad-text rise-w rise-hl" style={{ transitionDelay: `${d}ms` }}>{p.t}</em>
+          }
+          return p.t.split(/(\s+)/).map((w, j) => {
+            if (!w.trim()) return w
+            const d = n++ * 80
+            return <span key={`${i}-${j}`} className="rise-w" style={{ transitionDelay: `${d}ms` }}>{w}</span>
+          })
         })}
       </span>
     </Tag>

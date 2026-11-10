@@ -8,6 +8,9 @@ import nattyPoster from '../assets/work/natty-poster.jpg'
 import slotshotVideo from '../assets/work/slotshot.mp4'
 import slotshotWebm from '../assets/work/slotshot.webm'
 import slotshotPoster from '../assets/work/slotshot-poster.jpg'
+import politiVideo from '../assets/work/politiknow.mp4'
+import politiWebm from '../assets/work/politiknow.webm'
+import politiPoster from '../assets/work/politiknow-poster.jpg'
 import cardVideo from '../assets/work/cardwatch.mp4'
 import cardWebm from '../assets/work/cardwatch.webm'
 import cardPoster from '../assets/work/cardwatch-poster.jpg'
@@ -32,6 +35,12 @@ const PROJECTS = [
     copy: 'A full sweepstakes platform with user accounts, an admin dashboard, and a live drawing tool.',
     url: 'https://slotshot.live', host: 'slotshot.live', video: slotshotVideo, webm: slotshotWebm, poster: slotshotPoster,
     alt: 'Scrolling preview of the SlotShot.live website',
+  },
+  {
+    label: 'Voter guide · Web app', name: 'Politi-Know',
+    copy: 'A nonpartisan voter guide. Enter your address to see where you vote, who is on your ballot, where they stand, and who funds them, with a source for every fact.',
+    url: 'https://politiknow.app', host: 'politiknow.app', video: politiVideo, webm: politiWebm, poster: politiPoster,
+    alt: 'Scrolling preview of the Politi-Know website',
   },
 ]
 
@@ -117,7 +126,7 @@ export default function Portfolio() {
               </div>
             </Reveal>
           ))}
-          <Reveal className="work-item flip glow-card">
+          <Reveal className="work-item glow-card">
             <div className="work-text">
               <span className="eyebrow">Local jobs &middot; Web app</span>
               <h3>MapHire</h3>
@@ -128,7 +137,7 @@ export default function Portfolio() {
             </div>
             <MapArt />
           </Reveal>
-          <Reveal className="work-item glow-card">
+          <Reveal className="work-item flip glow-card">
             <div className="work-text">
               <span className="eyebrow">Inventory alerts &middot; Custom software</span>
               <h3>Card Watch</h3>

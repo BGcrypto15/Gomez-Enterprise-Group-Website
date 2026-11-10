@@ -65,7 +65,7 @@ export default function Steps() {
               ref={(el) => (refs.current[i] = el)}
             >
               <span className="eyebrow">Step {i + 1} of 3</span>
-              <Scramble as="h2" parts={s.parts} scramble />
+              <Scramble as="h2" parts={s.parts} rise />
               <p>{s.copy}</p>
             </div>
           ))}
