@@ -38,16 +38,16 @@ export function Reveal({ as: Tag = 'div', delay = 0, className = '', children, .
 
 const GLYPHS = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnpqrstuvwxyz0123456789#%&*+'
 
-// Headline that scrambles into place. parts: [{ t: 'text', hl: true|false }]
+// Headline. Fades up by default; pass scramble to have the letters scramble into place. parts: [{ t: 'text', hl: true|false }]
 // The real text is always in aria-label, so screen readers and search see the final words.
-export function Scramble({ as: Tag = 'h2', parts, className = '' }) {
+export function Scramble({ as: Tag = 'h2', parts, className = '', scramble = false }) {
   const full = parts.map((p) => p.t).join('')
   const [ref, seen] = useInView({ threshold: 0.4 })
   const [shown, setShown] = useState(full)
   const started = useRef(false)
 
   useEffect(() => {
-    if (!seen || started.current || prefersReducedMotion()) return
+    if (!scramble || !seen || started.current || prefersReducedMotion()) return
     started.current = true
     const start = performance.now()
     const dur = 750
@@ -66,11 +66,11 @@ export function Scramble({ as: Tag = 'h2', parts, className = '' }) {
     setShown(full.replace(/[^ ]/g, ' '))
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [seen, full])
+  }, [seen, full, scramble])
 
   let cursor = 0
   return (
-    <Tag ref={ref} className={`scramble ${className}`.trim()} aria-label={full}>
+    <Tag ref={ref} className={`${scramble ? 'scramble' : `reveal ${seen ? 'in' : ''}`} ${className}`.trim()} aria-label={full}>
       <span aria-hidden="true">
         {parts.map((p, i) => {
           const slice = shown.slice(cursor, cursor + p.t.length)

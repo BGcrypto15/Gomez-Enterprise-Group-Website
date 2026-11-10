@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import DeviceMock from './DeviceMock.jsx'
-import { Scramble } from './Reveal.jsx'
+import { Scramble, prefersReducedMotion } from './Reveal.jsx'
 
 const STEPS = [
   {
@@ -21,8 +21,26 @@ export default function Steps() {
   const [active, setActive] = useState(1)
   const refs = useRef([])
 
+  const deviceRef = useRef(null)
+
   useEffect(() => {
     if (!('IntersectionObserver' in window)) { setActive(3); return }
+    const small = window.matchMedia('(max-width: 960px)').matches
+
+    // Phones and tablets: the mockup sits still and builds itself once when you reach it.
+    if (small) {
+      if (prefersReducedMotion()) { setActive(3); return }
+      let timers = []
+      const io = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting) return
+        io.disconnect()
+        timers = [setTimeout(() => setActive(2), 900), setTimeout(() => setActive(3), 1800)]
+      }, { threshold: 0.6 })
+      if (deviceRef.current) io.observe(deviceRef.current)
+      return () => { io.disconnect(); timers.forEach(clearTimeout) }
+    }
+
+    // Laptops: the mockup follows whichever step is on screen.
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) setActive(Number(e.target.dataset.step))
@@ -35,7 +53,7 @@ export default function Steps() {
   return (
     <section className="steps" id="how">
       <div className="wrap steps-grid">
-        <div className="steps-device">
+        <div className="steps-device" ref={deviceRef}>
           <DeviceMock step={active} />
         </div>
         <div className="steps-list">
@@ -47,7 +65,7 @@ export default function Steps() {
               ref={(el) => (refs.current[i] = el)}
             >
               <span className="eyebrow">Step {i + 1} of 3</span>
-              <Scramble as="h2" parts={s.parts} />
+              <Scramble as="h2" parts={s.parts} scramble />
               <p>{s.copy}</p>
             </div>
           ))}

@@ -41,13 +41,15 @@ export default function Offer() {
           <div ref={ref}>
             <div className="oc-head">
               <span>Starter bundle</span>
-              <span>{on} of {INCLUDES.length} on</span>
+              <span>{on} of {INCLUDES.length} included</span>
             </div>
-            <ul className="toggles">
+            <ul className="includes">
               {INCLUDES.map((t, i) => (
                 <li key={t} className={i < on ? 'is-on' : ''}>
+                  <span className="inc-check" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" pathLength="1" /></svg>
+                  </span>
                   <span>{t}</span>
-                  <span className="switch" aria-hidden="true"><i /></span>
                 </li>
               ))}
             </ul>
