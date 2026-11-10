@@ -8,7 +8,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdenpyrv'
 const INITIAL_FORM = {
   name: '',
   email: '',
-  interest: 'Starter Bundle ($500)',
+  interest: 'Starter Bundle ($750)',
   message: '',
 }
 
@@ -109,7 +109,7 @@ export default function Contact() {
           <div>
             <label htmlFor="interest">What are you interested in?</label>
             <select id="interest" name="interest" value={form.interest} onChange={handleChange}>
-              <option>Starter Bundle ($500)</option>
+              <option>Starter Bundle ($750)</option>
               <option>Launch Package</option>
               <option>Growth Advisory</option>
               <option>Build-to-Own Systems</option>

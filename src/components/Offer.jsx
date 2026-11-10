@@ -25,17 +25,17 @@ export default function Offer() {
         <div className="offer-copy">
           <span className="eyebrow">A good place to start</span>
           <Scramble as="h2" parts={[{ t: 'Starter Bundle', hl: false }]} />
-          <div className="offer-ticket" role="note" aria-label="October only. Normally starts at $1,000.">
-            <span className="ticket-pill">October only</span>
+          <div className="offer-ticket" role="note" aria-label="November only. Normally starts at $1,000.">
+            <span className="ticket-pill">November only</span>
             <span>Normally starting at <s>$1,000</s></span>
           </div>
           <div className="offer-price">
-            <span className="offer-amount">$500</span>
+            <span className="offer-amount">$750</span>
             <span className="offer-one">One price</span>
           </div>
           <p>Everything you need to look established online, without waiting for someday.</p>
           <p className="offer-fine">Website live in as little as 24 hours after your content and photos are ready. Want us hands-on for 90 days? See the Launch Package below.</p>
-          <a href="#contact" className="btn btn-light">Claim the $500 bundle <Arrow /></a>
+          <a href="#contact" className="btn btn-light">Claim the $750 bundle <Arrow /></a>
         </div>
         <Reveal className="glow-card offer-card">
           <div ref={ref}>

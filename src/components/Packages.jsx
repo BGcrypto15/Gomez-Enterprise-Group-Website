@@ -5,7 +5,7 @@ import { GlossIcon, Arrow } from './Icons.jsx'
 const PRICE_PENDING = 'Quoted per order'
 
 const PACKAGES = [
-  { icon: 'website', name: 'Starter Bundle', tags: ['Website', 'Logo', 'QR code', 'Business plan'], price: '$500', note: 'Flat price. October only, normally from $1,000.' },
+  { icon: 'website', name: 'Starter Bundle', tags: ['Website', 'Logo', 'QR code', 'Business plan'], price: '$750', note: 'Flat price. November only, normally from $1,000.' },
   { icon: 'launch', name: 'Launch Package', tags: ['Brand identity', 'Website', 'Social setup', 'Registration guidance', '90 days hands-on'], price: 'From $1,000' },
   { icon: 'growth', name: 'Growth Advisory', tags: ['Audits', '90-day roadmap', 'Check-ins', 'Training'], price: 'From $500' },
   { icon: 'apps', name: 'Build-to-Own Systems', tags: ['Trackers', 'Automations', 'Dashboards', 'Alerts'], price: 'From $500' },

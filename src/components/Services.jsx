@@ -6,7 +6,7 @@ const SERVICES = [
   {
     id: 'launch', icon: 'launch', price: 'Starting at $1,000', label: 'Launch Package',
     hook: "For the idea that's been sitting in your notes app too long.",
-    impact: 'The full build-out, plus 90 days of hands-on partnership. We stay involved to plan it, launch it, and grow it with you. Just need the essentials and a written plan? Start with the $500 Starter Bundle.',
+    impact: 'The full build-out, plus 90 days of hands-on partnership. We stay involved to plan it, launch it, and grow it with you. Just need the essentials and a written plan? Start with the $750 Starter Bundle.',
     items: [
       'Brand identity: logo, colors, voice',
       'Website build, live and mobile-ready',
